@@ -1,13 +1,17 @@
 / {
-    zephyr,console = &uart0;
+    chosen {
+        zmk,kscan = &kscan0;
+    };
 
-    &mk1 {
-        compatible = "zmk,keyboard";
-        matrix {
-            rows = <1>;
-            cols = <1>;
-            row-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>;
-            col-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>;
-        };
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+
+        row-gpios
+            = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
     };
 };
