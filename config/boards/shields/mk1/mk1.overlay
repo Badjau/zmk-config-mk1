@@ -3,15 +3,15 @@
         zmk,kscan = &kscan0;
     };
 
-    kscan0: kscan {
+    kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+            = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
         row-gpios
-            = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };
