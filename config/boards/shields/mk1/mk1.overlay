@@ -11,9 +11,9 @@
         label = "default_kscan";
         diode-direction = "col2row";
 
-        row-gpios = <&pro_micro D0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        row-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         
-        col-gpios = <&pro_micro D1 GPIO_ACTIVE_HIGH>;
+        col-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
     };
 
     default_transform: matrix_transform {
