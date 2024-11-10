@@ -4,10 +4,14 @@
     };
 
     kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-direct";
+        compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
+        diode-direction = "col2row";
 
-        input-gpios
-            = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        col-gpios
+            = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+
+        row-gpios
+            = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
     };
 };
