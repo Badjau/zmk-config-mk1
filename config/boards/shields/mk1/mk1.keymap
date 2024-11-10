@@ -7,11 +7,11 @@
 
         default_layer {
             bindings = < 
-                &kp Q,  // Row 0, Column 0
-                &kp W,  // Row 1, Column 0
-                &kp E,  // Row 2, Column 0
-                &kp R,  // Row 3, Column 0
-                &kp T   // Row 4, Column 0
+                &kp Q  // Row 0, Column 0
+                &kp W  // Row 1, Column 0
+                &kp E  // Row 2, Column 0
+                &kp R  // Row 3, Column 0
+                &kp T  // Row 4, Column 0
             >;
         };
     };
