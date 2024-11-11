@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
+        zephyr,code-partition = &code_partition;
     };
 
     default_kscan: kscan {
