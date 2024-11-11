@@ -6,7 +6,7 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    default_kscan: kscan {  
+    kscan0: kscan {   
         compatible = "zmk,kscan-gpio-matrix";
         label = "default_kscan";
         diode-direction = "col2row";
