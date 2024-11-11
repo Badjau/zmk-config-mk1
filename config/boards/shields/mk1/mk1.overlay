@@ -4,10 +4,9 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-        zephyr,code-partition = &code_partition;
     };
 
-    default_kscan: kscan {
+    default_kscan: kscan {  
         compatible = "zmk,kscan-gpio-matrix";
         label = "default_kscan";
         diode-direction = "col2row";
@@ -26,13 +25,13 @@
 
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        columns = <2>;
         rows = <4>;
+        columns = <2>;
         map = <
             RC(0,0) RC(0,1)
             RC(1,0) RC(1,1)
             RC(2,0) RC(2,1)
-            RC(3,0) RC(3,1)
+            RC(3,0) RC(3,1)     
             >;
     };
 };
