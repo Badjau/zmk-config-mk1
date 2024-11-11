@@ -11,7 +11,7 @@
                 &kp R       &kp T
                 &kp F       &kp G 
                 &kp V       &kp B  
-                &kp LALT    &sm LGUI SPACE
+                &kp SPACE   &kp LALT
             >;
         };
     };
