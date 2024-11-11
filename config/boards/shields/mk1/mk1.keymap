@@ -8,11 +8,10 @@
 
         default_layer {
             bindings = < 
-                &kp Q  // Row 0, Column 0
-                &kp W  // Row 1, Column 0
-                &bootloader  // Row 2, Column 0
-                &bt BT_CLR      // Clear Bluetooth bonds
-                &bt BT_SEL 0    // Select first Bluetooth profile
+                &kp R       &kp T
+                &kp F       &kp G 
+                &kp V&      kp B  
+                &kp LALT    &sm LGUI SPACE      &bootloader
             >;
         };
     };

@@ -13,27 +13,26 @@
         diode-direction = "col2row";
 
         row-gpios = 
-                    <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+                    <&pro_micro 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
         col-gpios = 
+                    <&pro_micro 0 GPIO_ACTIVE_HIGH>,
                     <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 
     };
 
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        columns = <1>;
-        rows = <5>;
+        columns = <2>;
+        rows = <4>;
         map = <
-            RC(0,0) 
-            RC(1,0)
-            RC(2,0)
-            RC(3,0)
-            RC(4,0)
+            RC(0,0) RC(0,1)
+            RC(1,0) RC(1,1)
+            RC(2,0) RC(2,1)
+            RC(3,0) RC(3,1) RC(3,2)
             >;
     };
 };
