@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
@@ -10,8 +11,8 @@
                 &kp Q  // Row 0, Column 0
                 &kp W  // Row 1, Column 0
                 &kp E  // Row 2, Column 0
-                &kp R  // Row 3, Column 0
-                &kp T  // Row 4, Column 0
+                &bt BT_CLR      // Clear Bluetooth bonds
+                &bt BT_SEL 0    // Select first Bluetooth profile
             >;
         };
     };
