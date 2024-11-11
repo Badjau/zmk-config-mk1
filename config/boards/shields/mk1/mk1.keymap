@@ -11,7 +11,7 @@
                 &kp R       &kp T
                 &kp F       &kp G 
                 &kp V       &kp B  
-                &kp SPACE   &kp LALT
+                &kp A       &kp A
             >;
         };
     };
