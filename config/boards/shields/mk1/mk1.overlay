@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
+        zephyr,code-partition = &code_partition;
     };
 
     default_kscan: kscan {
@@ -11,19 +12,22 @@
         label = "default_kscan";
         diode-direction = "col2row";
 
-        row-gpios = <&pro_micro 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        row-gpios = 
+                    <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    
-        col-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+
+        col-gpios = 
+                    <&pro_micro 1 GPIO_ACTIVE_HIGH>,
+                    <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+
     };
 
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        rows = <4>;
         columns = <2>;
+        rows = <4>;
 
         map = <
             RC(0,0) RC(0,1) 
