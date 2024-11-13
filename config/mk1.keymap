@@ -48,8 +48,8 @@
 
         // Layer 2 (Activated on tap)
         F_keys {
+            display-name = "Fn"; 
             bindings = <
-                display-name = "Fn"; 
                 &bt BT_CLR_ALL  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans  &trans  &trans  &trans  &trans  &trans 
                 &trans          &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
                 &trans          &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
