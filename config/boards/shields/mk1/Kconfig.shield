@@ -1,2 +1,5 @@
-config SHIELD_MK1
-    def_bool $(shields_list_contains, mk1)
+config SHIELD_MK1_LEFT
+    def_bool $(shields_list_contains,mk1_left)
+
+config SHIELD_MK1_right
+    def_bool $(shields_list_contains,mk1_right)

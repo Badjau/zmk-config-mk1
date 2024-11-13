@@ -1,7 +1,17 @@
-if SHIELD_MK1
+if SHIELD_MK1_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "mk1"
+    default "MK1"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_MK1_LEFT || SHIELD_MK1_RIGHT
+
+config ZMK_SPLIT
+    default y
 
 if ZMK_DISPLAY
 
