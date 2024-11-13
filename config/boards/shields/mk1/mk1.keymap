@@ -39,7 +39,7 @@
                 &kp TAB         &kp Q      &kp W        &kp E       &kp R       &kp T  
                 &shift_caps     &kp A      &kp S        &kp D       &kp F       &kp G 
                 &kp LCTRL       &kp Z      &kp X        &kp C       &kp V       &kp B 
-                                                        &kp LALT     &kp SPACE   &slmo 1 2
+                                                        &kp LALT    &kp SPACE   &slmo 1 2
             >;
         };
 
