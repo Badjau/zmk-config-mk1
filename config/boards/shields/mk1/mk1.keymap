@@ -18,7 +18,7 @@ Default Layer
                     │ ALT │SPACE│ FN  │
                     └─────┴─────┴─────┘
 
-Layer 1
+Layer 1 - Tapped
 ┌───────┬─────┬─────┬─────┬─────┬─────┐
 │  ESC  │  F1 │  F2 │  F3 │  F4 │  F5 │
 ├───────┼─────┼─────┼─────┼─────┼─────┤
@@ -29,7 +29,7 @@ Layer 1
                     │ nul │ BOOT│ nul │
                     └─────┴─────┴─────┘
 
-Layer 2
+Layer 2 - Held
 ┌───────┬─────┬─────┬─────┬─────┬─────┐
 │ GRAVE │  N1 │  N2 │  N3 │  N4 │  N5 │
 ├───────┼─────┼─────┼─────┼─────┼─────┤
@@ -42,7 +42,6 @@ Layer 2
 */
 
 / {
-
     behaviors {
         shift_caps: shift_caps {
             compatible = "zmk,behavior-tap-dance";
@@ -58,10 +57,10 @@ Layer 2
         // Default Layer
         default_layer {
             bindings = < 
-                &kp TAB          &kp Q      &kp W       &kp E       &kp R       &kp T  
-                &kp shift_caps   &kp A      &kp S       &kp D       &kp F       &kp G 
-                &kp LCTRL        &kp Z      &kp X       &kp C       &kp V       &kp B 
-                                                        &kp LALT    &kp SPACE   &lt LOWER RAISE //LOWER when tapped, RAISE when held
+                &kp TAB         &kp Q      &kp W    &kp E       &kp R       &kp T  
+                &shift_caps     &kp A      &kp S    &kp D       &kp F       &kp G 
+                &kp LCTRL       &kp Z      &kp X    &kp C       &kp V       &kp B 
+                                                    &kp LALT    &kp SPACE   &lt LOWER RAISE //LOWER when tapped, RAISE when held
             >;
         };
 
