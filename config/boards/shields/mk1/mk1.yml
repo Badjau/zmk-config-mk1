@@ -1,0 +1,12 @@
+file_format: "1"
+id: mk1
+name: mk1
+type: shield
+url: https://github.com/TommieTYX/JellySplit/
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - mk1
