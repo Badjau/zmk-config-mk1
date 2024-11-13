@@ -38,23 +38,23 @@
             >;
         };
 
-        // Layer 1 (Activated on tap)
+        // Layer 1 (Activated on hold)
         layer_1 {
-            bindings = <
-                &kp ESC     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5
-                &trans      &none       &none       &none       &none       &none
-                &trans      &none       &none       &none       &none       &none
-                                                    &trans      &bootloader &none
-            >;
-        };
-
-        // Layer 2 (Activated on hold)
-        layer_2 {
             bindings = <
                 &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
                 &trans      &none       &none       &none       &none       &none
                 &trans      &none       &none       &none       &none       &none
                                                     &trans      &trans      &none
+            >;
+        };
+
+        // Layer 2 (Activated on tap)
+        layer_2 {
+            bindings = <
+                &bt BT_CLR_ALL  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5
+                &trans          &none       &none       &none       &none       &none
+                &trans          &none       &none       &none       &none       &none
+                                                        &trans      &bootloader &none
             >;
         };
     };
