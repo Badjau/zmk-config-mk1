@@ -19,15 +19,6 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>; // Hold for layer 1, tap for sticky layer 2
         }; 
-        lt_alt: layer_tap_alt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_ALT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&mo>;  // Hold for ALT, tap for momentary layer
-        };
     };
 
     keymap {    
