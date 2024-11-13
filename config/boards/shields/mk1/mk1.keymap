@@ -67,7 +67,7 @@ Layer 2 - Held
         // Layer 1 (Activated on tap)
         layer_1 {
             bindings = <
-                &ESC        &F1         &F2         &F3         &F4         &F5
+                &kp ESC     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5
                 &none       &none       &none       &none       &none       &none
                 &none       &none       &none       &none       &none       &none
                                                     &none       &bootloader &none
@@ -77,7 +77,7 @@ Layer 2 - Held
         // Layer 2 (Activated on hold)
         layer_2 {
             bindings = <
-                &GRAVE      &N1         &N2         &N3         &N4         &N5
+                &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
                 &none       &none       &none       &none       &none       &none
                 &none       &none       &none       &none       &none       &none
                                                     &none       &none       &none
