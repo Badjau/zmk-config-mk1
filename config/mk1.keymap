@@ -26,31 +26,34 @@
 
         // Default Layer
         default_layer {
+            display-name = "DEF";
             bindings = < 
-                &kp TAB         &kp Q      &kp W        &kp E       &kp R       &kp T  
-                &shift_caps     &kp A      &kp S        &kp D       &kp F       &kp G 
-                &kp LCTRL       &kp Z      &kp X        &kp C       &kp V       &kp B 
-                                                        &kp LALT    &kp SPACE   &slmo 1 2
+                &kp TAB         &kp Q      &kp W        &kp E       &kp R       &kp T       &trans  &trans  &trans  &trans  &trans  &trans  
+                &shift_caps     &kp A      &kp S        &kp D       &kp F       &kp G       &trans  &trans  &trans  &trans  &trans  &trans   
+                &kp LCTRL       &kp Z      &kp X        &kp C       &kp V       &kp B       &trans  &trans  &trans  &trans  &trans  &trans 
+                                                        &kp LALT    &kp SPACE   &slmo 1 2   &trans  &trans  &trans  
             >;
         };
 
         // Layer 1 (Activated on hold)
         layer_1 {
+            display-name = "NUM";
             bindings = <
-                &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
-                &trans      &none       &none       &none       &none       &none
-                &trans      &none       &none       &none       &none       &none
-                                                    &trans      &trans      &none
+                &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &trans  &trans  &trans  &trans  &trans  &trans 
+                &trans      &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
+                &trans      &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
+                                                    &trans      &trans      &none       &trans  &trans  &trans  
             >;
         };
 
         // Layer 2 (Activated on tap)
         F_keys {
             bindings = <
-                &bt BT_CLR_ALL  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5
-                &trans          &none       &none       &none       &none       &none
-                &trans          &none       &none       &none       &none       &none
-                                                        &trans      &bootloader &none
+                display-name = "Fn"; 
+                &bt BT_CLR_ALL  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans  &trans  &trans  &trans  &trans  &trans 
+                &trans          &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
+                &trans          &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans  &trans  &trans 
+                                                        &trans      &bootloader &none       &trans  &trans  &trans   
             >;
         };
     };
