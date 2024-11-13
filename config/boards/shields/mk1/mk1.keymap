@@ -2,16 +2,86 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+
+/* 
+Default Layer
+┌───────┬─────┬─────┬─────┬─────┬─────┐
+│  TAB  │  Q  │  W  │  E  │  R  │  T  │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│ SHIFT │  A  │  S  │  D  │  F  │  G  │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│ CTRL  │  Z  │  X  │  C  │  V  │  B  │
+└───────┴─────┴─────┴─────┴─────┴─────┘
+                    │ ALT │SPACE│ FN  │
+                    └─────┴─────┴─────┘
+
+Layer 1
+┌───────┬─────┬─────┬─────┬─────┬─────┐
+│  ESC  │  F1 │  F2 │  F3 │  F4 │  F5 │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│  nul  │ nul │ nul │ nul │ nul │ nul │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│  nul  │ nul │ nul │ nul │ nul │ nul │
+└───────┴─────┴─────┴─────┴─────┴─────┘
+                    │ nul │ BOOT│ nul │
+                    └─────┴─────┴─────┘
+
+Layer 2
+┌───────┬─────┬─────┬─────┬─────┬─────┐
+│ GRAVE │  N1 │  N2 │  N3 │  N4 │  N5 │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│  nul  │ nul │ nul │ nul │ nul │ nul │
+├───────┼─────┼─────┼─────┼─────┼─────┤
+│  nul  │ nul │ nul │ nul │ nul │ nul │
+└───────┴─────┴─────┴─────┴─────┴─────┘
+                    │ nul │ nul │ nul │
+                    └─────┴─────┴─────┘
+*/
+
 / {
+
+    behaviors {
+        shift_caps: shift_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHIFT>, <&kp CAPS>;
+        };
+    };
+
     keymap {    
         compatible = "zmk,keymap";
 
+        // Default Layer
         default_layer {
             bindings = < 
-            &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T  
-            &kp LSHIFT  &kp A       &kp S       &kp D       &kp F       &kp G 
-            &kp LCTRL   &kp Z       &kp X       &kp C       &kp V       &kp B 
-                                                &kp LALT    &kp SPACE   &none
+                &kp TAB          &kp Q      &kp W       &kp E       &kp R       &kp T  
+                &kp shift_caps   &kp A      &kp S       &kp D       &kp F       &kp G 
+                &kp LCTRL        &kp Z      &kp X       &kp C       &kp V       &kp B 
+                                                        &kp LALT    &kp SPACE   &lt LOWER RAISE //LOWER when tapped, RAISE when held
+            >;
+        };
+
+        // Layer 1 (Activated on tap)
+        layer_1 {
+            bindings = <
+                &ESC        &F1         &F2         &F3         &F4         &F5
+                &none       &none       &none       &none       &none       &none
+                &none       &none       &none       &none       &none       &none
+                                                    &none       &bootloader &none
+            >;
+        };
+
+        // Layer 2 (Activated on hold)
+        layer_2 {
+            bindings = <
+                &GRAVE      &N1         &N2         &N3         &N4         &N5
+                &none       &none       &none       &none       &none       &none
+                &none       &none       &none       &none       &none       &none
+                                                    &none       &none       &none
             >;
         };
     };
