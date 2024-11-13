@@ -14,9 +14,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHIFT>, <&kp CAPS>;
         };
-        mosl: mosl {
+        slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_MOMENTARY_LAYER";
             #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&sl>; // Hold for layer 1, tap for sticky layer 2
         };
     };
@@ -30,7 +34,7 @@
                 &kp TAB         &kp Q      &kp W    &kp E       &kp R       &kp T  
                 &shift_caps     &kp A      &kp S    &kp D       &kp F       &kp G 
                 &kp LCTRL       &kp Z      &kp X    &kp C       &kp V       &kp B 
-                                                    &kp LALT    &kp SPACE   &mosl 1 2
+                                                    &kp LALT    &kp SPACE   &slmo 1 2
             >;
         };
 
@@ -40,7 +44,7 @@
                 &kp ESC     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5
                 &trans      &none       &none       &none       &none       &none
                 &trans      &none       &none       &none       &none       &none
-                                                    &trans      &bootloader &to DEFAULT
+                                                    &trans      &bootloader &none
             >;
         };
 
@@ -50,7 +54,7 @@
                 &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
                 &trans      &none       &none       &none       &none       &none
                 &trans      &none       &none       &none       &none       &none
-                                                    &trans      &trans      &to DEFAULT
+                                                    &trans      &trans      &none
             >;
         };
     };
