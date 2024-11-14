@@ -1,9 +1,6 @@
 #include "mk1.dtsi"
-
+          
 &kscan0: kscan{
-    compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
-    diode-direction = "col2row";
 
     row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -16,4 +13,4 @@
                 <&pro_micro 6 (GPIO_ACTIVE_HIGH)>,
                 <&pro_micro 0 (GPIO_ACTIVE_HIGH)>,
                 <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-};              
+};    
