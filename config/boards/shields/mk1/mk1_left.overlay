@@ -1,6 +1,6 @@
 #include "mk1.dtsi"
           
-&kscan0: kscan{
+&kscan0 {
 
     row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
