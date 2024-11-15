@@ -1,6 +1,6 @@
 file_format: "1"
 id: mk1
-name: MK1
+name: mk1
 type: shield
 url: https://github.com/Badjau/zmk-config-mk1
 requires: [pro_micro]
