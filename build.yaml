@@ -22,3 +22,5 @@ include:
     shield: mk1_left
   - board: nice_nano_v2
     shield: mk1_right
+  - board: nice_nano_v2
+    shield: settings_reset
