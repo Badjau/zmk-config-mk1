@@ -27,22 +27,34 @@
         del_combo: combo {
             timeout-ms = <50>;               // Optional: Adjust the time window for the combo
             bindings = <&kp DEL>;            // Output DELETE
-            key-positions = <11 24>;         // Shift + Backspace
+            key-positions = <36 40>;         // Shift + Backspace
         };
     };
 
-
     keymap {    
         compatible = "zmk,keymap";
+        /*
+         Default Layer
+        ╔═══════╤═══════╤═══════╤═══════╤═══════╤═══════╦   ╤══════╤═══════╤═══════╤═══════╤═══════╤═══════╗
+        ║   TAB │    Q  │    W  │    E  │    R  │   T   ║   ║   Y  │    U  │    I  │    O  │    P  │   \   ║
+        ╠═══════╧═══════╤═══════╤═══════╤═══════╤═══════╬   ╤══════╤═══════╤═══════╤═══════╤═══════╤═══════╣
+        ║ LAYER │    A  │    S  │    D  │    F  │   G   ║   ║   H  │    J  │    K  │    L  │   ;   ║   '   ║
+        ║       │       │       │       │       │       ║   ║      │       │       │       │   '   ║   "   ║
+        ╠═══════════════╧═══════╤═══════╤═══════╤═══════╤   ╤══════╬═══════╤═══════╤═══════╤═══════╤═══════╣
+        ║ CTRL  │    Z  │    X  │    C  │    V  │   B   ║   ║   N  │    M  │   ,   │   .   │   /   ║ ENTER ║
+        ║       │       │       │       │       │       ║   ║      │       │   <   │   >   │   ?   │       ║
+        ╚═══════════════════════╧═══════╧═══════╧═══════╩   ╤══════╩═══════╦═══════╧═══════╧═══════╧═══════╝
+                                ║ SHCAPS│ SPACE │  ALT  ║   ║LAYER │  BSPC │ SHIFT ║
+                                ╚═══════════════╧═══════╝   ╚══════╧═══════╧═══════╝
 
-        // Default Layer
+        */
         default_layer {
             display-name = "DEF";
-            bindings = < //Right split WIP, backspace only.
-                &kp TAB         &kp Q      &kp W        &kp E           &kp R       &kp T       &kp Y       &kp U       &kp I       &kp .       &kp P       &kp BSPC  
-                &slmo 1 2       &kp A      &kp S        &kp D           &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
-                &kp LCTRL       &kp Z      &kp X        &kp C           &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp BSPC 
-                                                        &shift_caps     &kp SPACE   &kp LALT    &slmo 1 2   &kp ENTER   &kp RSHIFT  
+            bindings = <  
+                &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
+                &slmo 1 2       &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
+                &kp LCTRL       &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp ENTER 
+                                                        &shift_caps &kp SPACE   &kp LALT    &slmo 1 2   &kp BSPC    &kp RSHIFT  
             >;
         };
 
@@ -50,10 +62,10 @@
         layer_1 {
             display-name = "NUM";
             bindings = <
-                &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &trans  &trans  &trans  &kp MINUS   &kp EQUAL   &none 
-                &trans      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans  &trans  &trans  &trans      &trans      &trans 
-                &trans      &none       &none       &none       &none       &none       &trans  &trans  &trans  &trans      &trans      &trans 
-                                                    &trans      &trans      &none       &trans  &trans  &trans  
+                &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &trans      &trans      &kp UP      &kp MINUS   &kp EQUAL   &none 
+                &trans          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &trans      &trans 
+                &trans          &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans      &trans 
+                                                        &trans      &trans      &none       &trans      &trans      &trans  
             >;
         };
 
@@ -61,10 +73,10 @@
         F_keys {
             display-name = "Fn"; 
             bindings = <
-                &kp ESC         &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans      &trans  &trans  &trans  &trans  &trans 
-                &none           &none       &none       &none       &none       &none       &trans      &trans  &trans  &trans  &trans  &trans 
-                &bt BT_CLR_ALL  &kp LWIN    &none       &none       &none       &none       &trans      &trans  &trans  &trans  &trans  &trans 
-                                                        &trans      &sys_reset  &none       &sys_reset  &trans  &trans   
+                &kp ESC         &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans      &trans      &trans      &trans      &trans      &trans 
+                &none           &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans      &trans 
+                &bt BT_CLR_ALL  &kp LWIN    &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans      &trans 
+                                                        &trans      &sys_reset  &none       &none       &sys_reset  &trans   
             >;
         };
     };
