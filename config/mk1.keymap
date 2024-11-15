@@ -35,18 +35,18 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "DEF";
+            display-name = "Default Layer";
             bindings = <  
                 &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
                 &slmo 1 2       &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL       &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp ENTER 
-                                                        &shift_caps &kp SPACE   &kp LALT    &slmo 1 2   &kp BSCP    &kp RSHIFT                          
+                                                        &shift_caps &kp SPACE   &kp LALT    &none          &kp BSCP    &kp RSHIFT                          
             >;
         };
 
         // Layer 1 (Activated on hold)
         layer_1 {
-            display-name = "NUM";
+            display-name = "Number Layer";
             bindings = <
                 &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &trans      &trans      &kp UP      &kp MINUS   &kp EQUAL   &none 
                 &trans          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &trans      &trans 
@@ -57,7 +57,7 @@
 
         // Layer 2 (Activated on tap)
         F_keys {
-            display-name = "Fn"; 
+            display-name = "Fn Layer"; 
             bindings = <
                 &kp ESC         &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans      &trans      &trans      &trans      &trans      &trans 
                 &none           &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans      &trans 
