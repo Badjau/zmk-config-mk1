@@ -24,6 +24,7 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+        wakeup-source;
 
         // Define placeholders for rows and columns.
         row-gpios = <>, <>, <>, <>;
