@@ -19,7 +19,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&mo>, <&sl>; // Hold for layer 1, tap for sticky layer 2
         }; 
     };
@@ -47,7 +47,7 @@
                 &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift      &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL       &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp ENTER 
-                                                        &slmo 1 2   &kp SPACE   &kp LALT    &slmo 1 2   &kp BSPC    &kp ult_shift  
+                                                        &slmo 1 2   &kp SPACE   &kp LALT    &slmo 1 2   &kp BSPC    &ult_shift  
             >;
         };
 
