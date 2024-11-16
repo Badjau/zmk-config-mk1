@@ -4,11 +4,20 @@
 
 / {
     behaviors {
+        sticky_shift: sticky_shift {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SHIFT";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;                // Makes it release immediately after a keypress
+        };
+
         ult_shift: ult_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "ULT_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&td_shift>;
@@ -18,9 +27,10 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LSHFT>, <&kp CAPS>;
+            tapping-term-ms = <300>;
+            bindings = <&sticky_shift LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
         };
+        
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
