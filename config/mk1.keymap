@@ -13,7 +13,6 @@
             hold-behavior = "hold-preferred";    // Ensures hold is detected properly
             hold-binding = <&kp LSHFT>;         // Normal shift when held
         };
-    };
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
@@ -23,16 +22,6 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>; // Hold for layer 1, tap for sticky layer 2
         }; 
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        del_combo: combo {
-            timeout-ms = <50>;               // Optional: Adjust the time window for the combo
-            bindings = <&kp DEL>;            // Output DELETE
-            key-positions = <36 40>;         // Shift + Backspace
-        };
     };
 
     keymap {    
@@ -80,7 +69,7 @@
                 &kp ESC         &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &trans      &trans      &kp HOME        &kp END     &trans      &trans 
                 &none           &none       &none       &none       &none       &none       &trans      &trans      &kp PG_UP       &trans      &trans      &trans 
                 &bt BT_CLR_ALL  &kp LWIN    &none       &none       &none       &none       &trans      &trans      &kp PG_DN       &trans      &trans      &trans 
-                                                        &trans      &none       &none       &none       &none       &trans   
+                                                        &none       &none       &trans       &kp K_APP   &none       &trans   
             >;
         };
     };
