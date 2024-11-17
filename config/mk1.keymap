@@ -96,12 +96,12 @@
         };
         // Layer 4 (Activated on tap)
         Nav_layer {
-            display-name = "NAV";
+            display-name = "0";
             bindings = <
-                &none           &none       &none       &none       &none       &none       &trans      &trans      &kp UP      &none       &kp HOME       &kp END 
-                &trans          &none       &none       &none       &none       &none       &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_UP      &trans 
-                &trans          &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &kp PG_DN      &trans 
-                                                        &trans      &trans      &trans      &trans      &trans      &trans  
+                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
+                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
+                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
+                                                        &none       &none       &none       &none       &none       &none  
             >;
         };
     };
