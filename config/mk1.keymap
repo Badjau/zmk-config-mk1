@@ -35,19 +35,19 @@
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
-            #binding-cells = <0>;
+            #binding-cells = <1>;          // Changed to accept one parameter
             tapping-term-ms = <300>;
-            bindings = <&sl>, <&to>;    // First tap = sticky layer 1, double tap = switch to layer 1
+            bindings = <&sl>, <&to>;       // Remove hardcoded layer numbers
         };
 
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
-            #binding-cells = <2>;
+            #binding-cells = <3>;          // Changed to accept three parameters
             tapping-term-ms = <300>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
-            bindings = <&mo>, <&td_layer>;  // Hold for momentary, tap for tap-dance behavior
+            bindings = <&mo>, <&td_layer>; // td_layer will now pass through the layer parameter
         };
     };
 
