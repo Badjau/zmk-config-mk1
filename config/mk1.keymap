@@ -17,7 +17,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "ULT_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&td_shift>;
@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <220>;
             bindings = <&sticky_shift LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
         };
      
@@ -35,59 +35,60 @@
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
-            #binding-cells = <0>;          // Now accepts two parameters
-            tapping-term-ms = <300>;
-            bindings = <&sl>, <&to>;       // Generic layer behaviors
+            #binding-cells = <1>;  // Accepts one parameter: the layer index
+            tapping-term-ms = <220>;
+            bindings = <&sl>, <&to>;  // Bindings use the passed layer index
         };
+
 
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
-            #binding-cells = <2>;          
-            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
-            bindings = <&mo>, <&td_layer>; // Hold for layer 1, tap for sticky layer 2, double tap for layer 3
+            bindings = <&mo>, <&td_layer>;  // Hold for momentary, tap for tap-dance behavior
         };
     };
 
     keymap {    
         compatible = "zmk,keymap";
         default_layer {
-            display-name = "Base Layer";
-            bindings = <  
+            display-name = "QWERTY : )";
+            bindings = <   
                 &kp TAB             &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift LSHFT 0  &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp ENTER 
-                                                            &slmo 1 1 1 &kp SPACE   &kp LALT    &kp RSHIFT  &kp BSPC    &slmo 3 2 2
+                                                            &slmo 1 2,&td_layer 3   &kp SPACE   &kp LALT    &slmo 3 3   &kp BSPC    &kp RSHIFT  
             >;
         };
 
         // Layer 1 (Activated on hold)
         layer_1 {
-            display-name = "Number Layer";
+            display-name = "Number";
             bindings = <
                 &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &none 
                 &trans          &none       &none       &none       &none       &none       &none       &none       &none       &none       &kp MINUS   &kp EQUAL
-                &trans          &kp LWIN    &none       &none       &none       &none       &trans      &trans      &kp LBKT    &kp RBKT    &none       &none 
+                &kp LWIN        &none       &none       &none       &none       &none       &trans      &trans      &kp LBKT    &kp RBKT    &none       &none 
                                                         &trans      &trans      &kp LALT    &trans      &kp DEL     &trans  
             >;
         };
 
         // Layer 2 (Activated on tap)
         F_keys {
-            display-name = "FN Layer"; 
+            display-name = "Function"; 
             bindings = <
                 &kp ESC         &trans      &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans
                 &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12 
                 &none           &none       &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
-                                                        &to 0       &none       &kp LALT    &kp K_APP   &none       &to 0  
+                                                        &to 0       &none       &trans      &kp K_APP   &none       &trans   
             >;
         };
 
         // Layer 3 (Activated on hold)
         Nav_layer {
-            display-name = "NAV";
+            display-name = "Navigation";
             bindings = <
                 &trans          &none       &none       &none       &none       &none       &trans      &trans      &kp UP      &none       &kp HOME       &kp END 
                 &trans          &none       &none       &none       &none       &none       &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_UP      &trans 
