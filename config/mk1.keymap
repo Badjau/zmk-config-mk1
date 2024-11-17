@@ -35,7 +35,7 @@
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
-            #binding-cells = <2>;          // Now accepts two parameters
+            #binding-cells = <0>;          // Now accepts two parameters
             tapping-term-ms = <300>;
             bindings = <&sl>, <&to>;       // Generic layer behaviors
         };
@@ -43,7 +43,7 @@
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
-            #binding-cells = <3>;          // Now needs 3 parameters: mo_layer, sl_layer, to_layer
+            #binding-cells = <2>;          
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
