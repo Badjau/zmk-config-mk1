@@ -4,6 +4,13 @@
 
 / {
     behaviors {
+        alt_f4: alt_f4_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp F4>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT|MOD_RALT)>;
+        };
         custom_sticky: custom_sticky {
              compatible = "zmk,behavior-sticky-key";
              label = "STICKY_SHIFT";
@@ -77,6 +84,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_altf4 {
+            timeout-ms = <50>;
+            key-positions = <3 38>;
+            bindings = <&kp LALT>, <&kp F4>;
+    };
+
+
     keymap {    
         compatible = "zmk,keymap";
         default_layer {
@@ -93,10 +109,10 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &kp ESC       &kp N1      &kp N2      &kp N3      &kp N4        &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans 
-                &kp GRAVE     &trans       &trans       &trans       &trans         &trans       &trans       &trans       &trans       &trans       &kp MINUS   &kp EQUAL
-                &trans         &kp LWIN    &trans       &trans       &trans         &trans           &trans      &trans      &kp LBKT    &kp RBKT    &trans       &trans 
-                                                                                &to 0       &trans      &kp LALT    &trans      &kp DEL      &to 0  
+                &kp ESC                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans 
+                &ult_shift LSHFT 0      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans       &kp MINUS   &kp EQUAL
+                &trans                  &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans       &trans 
+                                                                            &to 0       &trans      &kp LALT    &trans      &kp DEL      &to 0  
             >;
         };
 
