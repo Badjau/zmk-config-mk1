@@ -50,7 +50,7 @@
             bindings = <&mo>, <&td_layer1>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
         };
 
-        td_layer2: tap_dance_layer {
+        td_layer2: tap_dance_layer2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
             #binding-cells = <0>;
@@ -58,7 +58,7 @@
             bindings = <&sl 2>, <&to 2>;    // First tap = sticky layer 1, double tap = switch to layer 1
         };
 
-        slmo2: sticky_momentary_layer {
+        slmo2: sticky_momentary_layer2 {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
             #binding-cells = <2>;
