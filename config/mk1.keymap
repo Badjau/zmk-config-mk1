@@ -4,32 +4,32 @@
 
 / {
     behaviors {
-~        custom_sticky: custom_sticky {
-~            compatible = "zmk,behavior-sticky-key";
-~            label = "STICKY_SHIFT";
-~            #binding-cells = <1>;
-~            bindings = <&kp>;
-~            release-after-ms = <1000>;
-~            quick-release;                // Makes it release immediately after a keypress
-~        };
-~
-~        ult_shift: ult_shift {
-~            compatible = "zmk,behavior-hold-tap";
-~            label = "ULT_SHIFT";
-~            #binding-cells = <2>;
-~            tapping-term-ms = <220>;
-~            quick-tap-ms = <0>;
-~            flavor = "hold-preferred";
-~            bindings = <&kp>, <&td_shift>;
-~        };
-~
-~        td_shift: tap_dance_shift {
-~            compatible = "zmk,behavior-tap-dance";
-~            label = "TAP_DANCE_SHIFT";
-~            #binding-cells = <0>;
-~            tapping-term-ms = <220>;
-~            bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
-~        };
+        custom_sticky: custom_sticky {
+             compatible = "zmk,behavior-sticky-key";
+             label = "STICKY_SHIFT";
+             #binding-cells = <1>;
+             bindings = <&kp>;
+             release-after-ms = <1000>;
+             quick-release;                // Makes it release immediately after a keypress
+         };
+ 
+         ult_shift: ult_shift {
+             compatible = "zmk,behavior-hold-tap";
+             label = "ULT_SHIFT";
+             #binding-cells = <2>;
+             tapping-term-ms = <220>;
+             quick-tap-ms = <0>;
+             flavor = "hold-preferred";
+             bindings = <&kp>, <&td_shift>;
+         };
+ 
+         td_shift: tap_dance_shift {
+             compatible = "zmk,behavior-tap-dance";
+             label = "TAP_DANCE_SHIFT";
+             #binding-cells = <0>;
+             tapping-term-ms = <220>;
+             bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
+         };
 
 
         td_layer1: tap_dance_layer {
