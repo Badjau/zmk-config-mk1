@@ -77,7 +77,7 @@
                 &kp TAB             &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift LSHFT 0  &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp RSHIFT 
-                                                            &slmo1 1 1   &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 2  
+                                                            &slmo1 1 1   &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC    &slmo2 2 3  
             >;
         };
 
@@ -88,7 +88,7 @@
                 &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &none 
                 &trans          &none       &none       &none       &none       &none       &none       &none       &none       &none       &kp MINUS   &kp EQUAL
                 &kp LWIN        &none       &none       &none       &none       &none       &trans      &trans      &kp LBKT    &kp RBKT    &none       &none 
-                                                        &trans      &trans      &kp LALT    &trans      &kp DEL     &trans  
+                                                        &to 9      &trans      &kp LALT    &trans      &kp DEL     &trans  
             >;
         };
 
