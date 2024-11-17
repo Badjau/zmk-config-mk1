@@ -12,7 +12,7 @@
             release-after-ms = <1000>;
             quick-release;                // Makes it release immediately after a keypress
         };
-
+        
         ult_shift: ult_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "ULT_SHIFT";
@@ -35,20 +35,19 @@
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
-            #binding-cells = <1>;  // Accepts one parameter: the layer index
-            tapping-term-ms = <220>;
-            bindings = <&sl>, <&to>;  // Bindings use the passed layer index
+            #binding-cells = <1>;
+            tapping-term-ms = <300>;
+            bindings = <&sl>, <&to>;  // Use the passed parameter for layer switching
         };
-
 
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            #binding-cells = <3>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
-            bindings = <&mo>, <&td_layer>;  // Hold for momentary, tap for tap-dance behavior
+            bindings = <&mo>, <&td_layer>;  // Pass the layer parameter to the tap-dance behavior
         };
     };
 
@@ -60,7 +59,7 @@
                 &kp TAB             &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift LSHFT 0  &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp ENTER 
-                                                            &slmo 1 2,&td_layer 3   &kp SPACE   &kp LALT    &slmo 3 3   &kp BSPC    &kp RSHIFT  
+                                                            &slmo 1 1 1 &kp SPACE   &kp LALT    &kp RSHIFT  &kp BSPC    &slmo 3 2 2  
             >;
         };
 
@@ -82,7 +81,7 @@
                 &kp ESC         &trans      &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans
                 &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12 
                 &none           &none       &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
-                                                        &to 0       &none       &trans      &kp K_APP   &none       &trans   
+                                                        &to 0       &none       &kp LALT      &kp K_APP   &none       &trans   
             >;
         };
 
