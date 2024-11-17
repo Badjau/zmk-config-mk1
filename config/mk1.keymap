@@ -53,7 +53,7 @@
             label = "TAP_DANCE_LAYER";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&not_so_sticky 1>, <&to 1>;    // First tap = sticky layer 1, double tap = switch to layer 1
+            bindings = <&sl 1>, <&to 1>;    // First tap = sticky layer 1, double tap = switch to layer 1
         };
 
         slmo1: sticky_momentary_layer {
@@ -84,7 +84,7 @@
             bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
         };
     };
-    
+
     keymap {    
         compatible = "zmk,keymap";
         default_layer {
