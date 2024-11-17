@@ -35,16 +35,17 @@
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
-            #binding-cells = <1>;
-            tapping-term-ms = <300>;
+            #binding-cells = <0>;  // Ensure this matches the binding file
+            tapping-term-ms = <220>;
             bindings = <&sl>, <&to>;  // Use the passed parameter for layer switching
         };
+
 
         slmo: sticky_momentary_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
-            #binding-cells = <3>;
-            tapping-term-ms = <300>;
+            #binding-cells = <2>;  // Ensure this matches the binding file
+            tapping-term-ms = <220>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&td_layer>;  // Pass the layer parameter to the tap-dance behavior
@@ -81,7 +82,7 @@
                 &kp ESC         &trans      &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans
                 &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12 
                 &none           &none       &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
-                                                        &to 0       &none       &kp LALT      &kp K_APP   &none       &trans   
+                                                        &to 0       &none       &kp LALT    &kp K_APP   &none       &trans   
             >;
         };
 
