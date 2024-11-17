@@ -30,13 +30,14 @@
             tapping-term-ms = <300>;
             bindings = <&sticky_shift LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
         };
-        
+     
+
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sl 2>, <&to 2>;    // First tap = sticky layer 2, double tap = switch to layer 1
+            bindings = <&sl 2>, <&to 2>;    // First tap = sticky layer 1, double tap = switch to layer 1
         };
 
         slmo: sticky_momentary_layer {
@@ -77,8 +78,8 @@
         F_keys {
             display-name = "Fn"; 
             bindings = <
+                &kp ESC         &trans      &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans
                 &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12 
-                &none           &none       &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
                 &none           &kp LWIN    &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
                                                         &none       &none       &trans      &kp K_APP   &none       &trans   
             >;
@@ -88,14 +89,14 @@
         Nav_layer {
             display-name = "NAV";
             bindings = <
-                &none           &none       &none       &none       &none       &none       &trans      &trans      &kp UP      &none       &kp HOME       &kp END 
+                &trans          &none       &none       &none       &none       &none       &trans      &trans      &kp UP      &none       &kp HOME       &kp END 
                 &trans          &none       &none       &none       &none       &none       &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_UP      &trans 
                 &trans          &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &kp PG_DN      &trans 
                                                         &trans      &trans      &trans      &trans      &trans      &trans  
             >;
         };
         // Layer 4 (Activated on tap)
-        Nav_layer {
+        Empty_layer {
             display-name = "0";
             bindings = <
                 &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
