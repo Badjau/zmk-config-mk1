@@ -25,7 +25,7 @@
              compatible = "zmk,behavior-hold-tap";
              label = "ULT_SHIFT";
              #binding-cells = <2>;
-             tapping-term-ms = <220>;
+             tapping-term-ms = <250>;
              quick-tap-ms = <0>;
              flavor = "hold-preferred";
              bindings = <&kp>, <&td_shift>;
@@ -35,7 +35,7 @@
              compatible = "zmk,behavior-tap-dance";
              label = "TAP_DANCE_SHIFT";
              #binding-cells = <0>;
-             tapping-term-ms = <220>;
+             tapping-term-ms = <250>;
              bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
          };
 
@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER";
             #binding-cells = <0>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             bindings = <&not_so_sticky 1>, <&to 1>;    // First tap = sticky layer 1, double tap = switch to layer 1
         };
 
@@ -52,7 +52,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&td_layer1>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
@@ -62,7 +62,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER2";
             #binding-cells = <0>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             bindings = <&not_so_sticky 2>, <&to 2>;    // First tap = sticky layer 1, double tap = switch to layer 1
         };
 
@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOMENTARY_LAYER2";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
@@ -93,10 +93,10 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &none 
-                &trans          &none       &none       &none       &none       &none       &none       &none       &none       &none       &kp MINUS   &kp EQUAL
-                &kp LWIN        &none       &none       &none       &none       &none       &trans      &trans      &kp LBKT    &kp RBKT    &none       &none 
-                                                        &to 9      &trans      &kp LALT    &trans      &kp DEL     &trans  
+                &kp ESC       &kp N1      &kp N2      &kp N3      &kp N4        &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans 
+                &kp GRAVE     &trans       &trans       &trans       &trans         &trans       &trans       &trans       &trans       &trans       &kp MINUS   &kp EQUAL
+                &trans         &kp LWIN    &trans       &trans       &trans         &trans           &trans      &trans      &kp LBKT    &kp RBKT    &trans       &trans 
+                                                                                &to 0       &trans      &kp LALT    &trans      &kp DEL      &to 0  
             >;
         };
 
@@ -104,10 +104,10 @@
         F_keys {
             display-name = "Function"; 
             bindings = <
-                &kp ESC         &trans      &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &trans
-                &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12 
-                &none           &none       &none       &none       &none       &none       &trans      &trans      &none       &trans      &trans      &trans 
-                                                        &to 0       &none       &kp LALT    &kp K_APP   &none       &trans   
+                &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12
+                &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
+                                                        &to 0       &trans      &kp LALT    &kp K_APP   &trans      &trans  
             >;
         };
 
@@ -115,20 +115,20 @@
         Nav_layer {
             display-name = "Movement";
             bindings = <
-                &trans          &none       &none       &none       &none       &none       &trans      &trans      &kp UP      &none       &kp HOME       &kp END 
-                &trans          &none       &none       &none       &none       &none       &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_UP      &trans 
-                &trans          &none       &none       &none       &none       &none       &trans      &trans      &trans      &trans      &kp PG_DN      &trans 
-                                                        &trans      &trans      &trans      &trans      &trans      &trans  
-            >;
-        };
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp UP      &trans       &kp HOME      &kp END 
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_UP      &trans 
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp PG_DN      &trans 
+                                                    &trans      &trans      &trans      &trans      &trans      &trans  
+                >;
+            };
         // Layer 4 (Activated on tap)
         Empty_layer {
             display-name = "0";
             bindings = <
-                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
-                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
-                &none           &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none 
-                                                        &none       &none       &none       &none       &none       &none  
+                &trans           &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans 
+                &trans           &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans 
+                &trans           &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans 
+                                                        &trans       &trans       &trans       &trans       &trans       &trans  
             >;
         };
     };
