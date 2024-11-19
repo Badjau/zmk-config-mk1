@@ -7,7 +7,7 @@
         alt_f4: alt_f4_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp R>, <&kp F4>;
+            bindings = <&kp E>, <&kp F4>;
             mods = <(MOD_LALT|MOD_RALT)>;
             keep-mods = <(MOD_LALT|MOD_RALT)>;
         };
@@ -113,7 +113,7 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &kp ESC                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans 
+                &kp ESC                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
                 &ult_shift LSHFT 0      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
                 &trans                  &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
                                                                             &to 0       &trans      &kp LALT    &trans      &kp DEL     &to 0  
@@ -145,7 +145,7 @@
         Shortcut_layer {
             display-name = "Shortcut";
             bindings = <
-                &trans      &trans      &trans          &trans       &trans         &trans        &trans      &trans       &kp INS      &trans          &kp C_MUTE    &kp C_VOL_UP 
+                &trans      &trans      &trans          &trans       &trans         &trans        &trans      &trans       &kp K_INS      &trans          &kp C_MUTE    &kp C_VOL_UP 
                 &trans      &trans      &sleep_macro    &trans       &bt BT_CLR_ALL &trans        &trans      &kp C_PREV   &kp C_PP     &kp C_NEXT      &trans        &kp C_VOL_DN 
                 &trans      &trans      &trans          &trans       &trans         &trans        &trans      &trans       &trans       &bt BT_NXT      &trans        &trans 
                                         &trans          &trans       &trans         &trans        &trans      &trans  
