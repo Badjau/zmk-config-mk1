@@ -4,13 +4,6 @@
 
 / {
     behaviors {
-        hw_soft_off: hw_soft_off {
-            compatible = "zmk,behavior-soft-off";
-            #binding-cells = <0>;
-            split-peripheral-off-on-press; // Turn peripheral off immediately for reliability
-            hold-time-ms = <2000>; // Only turn off if the key is held for 2 seconds or longer.
-        };
-
         alt_f4: alt_f4_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -152,7 +145,7 @@
         Shortcut_layer {
             display-name = "Shortcut";
             bindings = <
-                &hw_soft_off   &trans      &trans          &trans       &trans         &trans        &trans      &trans       &kp INS      &trans          &kp C_MUTE    &kp C_VOL_UP 
+                &soft_off   &trans      &trans          &trans       &trans         &trans        &trans      &trans       &kp INS      &trans          &kp C_MUTE    &kp C_VOL_UP 
                 &trans      &trans      &sleep_macro    &trans       &bt BT_CLR_ALL &trans        &trans      &kp C_PREV   &kp C_PP     &kp C_NEXT      &trans        &kp C_VOL_DN 
                 &trans      &trans      &trans          &trans       &trans         &trans        &trans      &trans       &trans       &bt BT_NXT      &trans        &trans 
                                         &trans          &trans       &trans         &trans        &trans      &trans  
