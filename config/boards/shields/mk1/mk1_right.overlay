@@ -1,10 +1,8 @@
 #include "mk1.dtsi"
 
-/*
 &default_transform {
     col-offset = <6>;
 };
-*/
 
 &kscan0 {
     row-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
