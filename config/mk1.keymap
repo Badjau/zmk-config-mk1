@@ -55,13 +55,9 @@
 
         ult_shift_tap_dance: tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <300>; // Max interval for double tap
-
-            bindings = <
-                &sticky_shift LSHFT    // Single tap triggers sticky shift
-                &kp CAPS_LOCK          // Double tap triggers Caps Lock
-            >;
+            bindings = <&sticky_shift LSHFT>, <&kp CAPS_LOCK>;
         };
         
         ult_shift: hold_tap_behavior {
