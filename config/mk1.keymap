@@ -32,9 +32,9 @@
              label = "STICKY_SHIFT";
              #binding-cells = <1>;
              bindings = <&kp>;
-             release-after-ms = <1000>;
+             release-after-ms = <500>;
              quick-release;                // Makes it release immediately after a keypress
-         };
+        };
 
         not_so_sticky: not_so_sticky { //useful for combinations
              compatible = "zmk,behavior-sticky-key";
@@ -42,26 +42,23 @@
              #binding-cells = <1>;
              bindings = <&mo>;
              release-after-ms = <800>; // Makes it linger even after a keypress
-         };
- 
-         ult_shift: ult_shift {
-             compatible = "zmk,behavior-hold-tap";
-             label = "ULT_SHIFT";
-             #binding-cells = <2>;
-             tapping-term-ms = <250>;
-             quick-tap-ms = <0>;
-             flavor = "hold-preferred";
-             bindings = <&kp>, <&td_shift>;
-         };
- 
-         td_shift: tap_dance_shift {
-             compatible = "zmk,behavior-tap-dance";
-             label = "TAP_DANCE_SHIFT";
-             #binding-cells = <0>;
-             tapping-term-ms = <250>;
-             bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
-         };
+        };
 
+        sticky_shift: sticky_shift {
+             compatible = "zmk,behavior-sticky-key";
+             label = "STICKY_SHIFT";
+             #binding-cells = <1>;
+             bindings = <&kp LSHFT>;
+             release-after-ms = <500>;
+             quick-release;                // Makes it release immediately after a keypress
+        };
+
+        ult_shift: ult_shift {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&mt LSHIFT sticky_shift>, <&kp CAPSLOCK>;
+        };
 
         td_layer1: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
