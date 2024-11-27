@@ -43,31 +43,25 @@
              bindings = <&mo>;
              release-after-ms = <800>; // Makes it linger even after a keypress
         };
-
-        sticky_shift: sticky_shift {
-             compatible = "zmk,behavior-sticky-key";
-             label = "STICKY_SHIFT";
-             #binding-cells = <1>;
-             bindings = <&kp>;
-             release-after-ms = <500>;
-             quick-release;                // Makes it release immediately after a keypress
+ 
+         ult_shift: ult_shift {
+             compatible = "zmk,behavior-hold-tap";
+             label = "ULT_SHIFT";
+             #binding-cells = <2>;
+             tapping-term-ms = <200>;
+             quick-tap-ms = <0>;
+             flavor = "hold-preferred";
+             bindings = <&kp LSHFT>, <&td_shift>;
+        };
+ 
+         td_shift: tap_dance_shift {
+             compatible = "zmk,behavior-tap-dance";
+             label = "TAP_DANCE_SHIFT";
+             #binding-cells = <0>;
+             tapping-term-ms = <200>;
+             bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
         };
 
-        ult_shift_tap_dance: tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>; // Max interval for double tap
-            bindings = <&sticky_shift LSHFT>, <&kp CAPS_LOCK>;
-        };
-        
-        ult_shift: hold_tap_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>; // Time to differentiate between hold and tap
-            flavor = "balanced";    // Balanced for better distinction between tap and hold
-            bindings = <&kp LSHFT>, <&ult_shift_tap_dance> // Tap behavior (sticky Shift or Caps Lock)
-            >;
-        };
 
         td_layer1: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
@@ -124,7 +118,7 @@
             display-name = "QWERTY";
             bindings = <   
                 &kp TAB             &kp Q       &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
-                &ult_shift          &kp A       &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
+                &ult_shift 0 0      &kp A       &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &win_z 0 Z  &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 4 
                                                             &slmo1 1 1  &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 3  
             >;
@@ -134,10 +128,10 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &esc_tilde 0 0  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
-                &ult_shift      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
-                &trans          &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
-                                                                    &to 0       &trans      &kp LALT    &trans      &kp DEL     &to 0  
+                &esc_tilde 0 0          &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
+                &ult_shift LSHFT 0      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
+                &trans                  &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
+                                                                            &to 0       &trans      &kp LALT    &trans      &kp DEL     &to 0  
             >;
         };
 
