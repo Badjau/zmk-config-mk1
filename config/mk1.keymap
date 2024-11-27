@@ -65,10 +65,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>; // Time to differentiate between hold and tap
             flavor = "balanced";    // Balanced for better distinction between tap and hold
-
-            bindings = <
-                &kp LSFT             // Hold behavior (normal Shift)
-                &ult_shift_tap_dance // Tap behavior (sticky Shift or Caps Lock)
+            bindings = <&kp LSHFT>, <&ult_shift_tap_dance> // Tap behavior (sticky Shift or Caps Lock)
             >;
         };
 
