@@ -128,9 +128,9 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &esc_tilde 0 0          &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
-                &ult_shift LSHFT 0      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
-                &trans                  &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
+                &esc_tilde 0 0  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
+                &ult_shift 0 0  &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
+                &trans          &kp LWIN    &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
                                                                             &to 0       &trans      &kp LALT    &trans      &kp DEL     &to 0  
             >;
         };
