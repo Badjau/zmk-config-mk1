@@ -48,7 +48,7 @@
              compatible = "zmk,behavior-sticky-key";
              label = "STICKY_SHIFT";
              #binding-cells = <1>;
-             bindings = <&kp LSHFT>;
+             bindings = <LSHFT>;
              release-after-ms = <500>;
              quick-release;                // Makes it release immediately after a keypress
         };
