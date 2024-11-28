@@ -37,7 +37,7 @@
              tapping-term-ms = <100>;
              quick-tap-ms = <0>;
              flavor = "hold-preferred";
-             bindings = <&kp>, <&td_shift>; //binding set to LSHFT in keymap
+             bindings = <&kp>, <&td_shift>; //binding set to LSHFT in keymap ex: "&ult_shift LSHFT 0"
         };
  
         td_shift: tap_dance_shift {
