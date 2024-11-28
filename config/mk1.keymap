@@ -26,6 +26,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp GRAVE>, <&kp ESC>;
+        };
 
         custom_sticky: custom_sticky {
              compatible = "zmk,behavior-sticky-key";
@@ -44,7 +45,7 @@
              release-after-ms = <800>; // Makes it linger even after a keypress
         };
  
-         ult_shift: ult_shift {
+        ult_shift: ult_shift {
              compatible = "zmk,behavior-hold-tap";
              label = "ULT_SHIFT";
              #binding-cells = <2>;
@@ -54,7 +55,7 @@
              bindings = <&kp LSHFT>, <&td_shift>;
         };
  
-         td_shift: tap_dance_shift {
+        td_shift: tap_dance_shift {
              compatible = "zmk,behavior-tap-dance";
              label = "TAP_DANCE_SHIFT";
              #binding-cells = <0>;
