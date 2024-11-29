@@ -32,8 +32,10 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        com-sequential;
+        segment-remap; // delete to invert
+        com-invdir; // delete to invert
+        com-sequential; // delete to invert
         prechargep = <0x22>;
-        //inversion-on;
+        inversion-on;
     };
 };
