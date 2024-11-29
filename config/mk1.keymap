@@ -11,6 +11,13 @@
             mods = <(MOD_LALT|MOD_RALT)>;
             keep-mods = <(MOD_LALT|MOD_RALT)>;
         };
+        
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
 
         win_z: win_z_hold_tap {
              compatible = "zmk,behavior-hold-tap";
@@ -111,7 +118,7 @@
         compatible = "zmk,combos";
         combo_del {
             timeout-ms = <50>;
-            key-positions = <37 39>; //alt + BSPC
+            key-positions = <38 40>; //alt + BSPC
             bindings = <&kp DEL>;
         };
     };
@@ -124,7 +131,7 @@
                 &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift LSHFT 0  &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 4 
-                                                                &slmo1 1 1  &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 3  
+                                                                &slmo1 1 1  &kp SPACE   &kp LALT    &kp ENTER  &bspc_del     &slmo2 3 3  
             >;
         };
 
