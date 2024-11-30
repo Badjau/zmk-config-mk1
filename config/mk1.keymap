@@ -20,13 +20,16 @@
         };
 
         win_z: win_z_hold_tap {
-             compatible = "zmk,behavior-hold-tap";
-             label = "WIN_Z_HOLD_TAP";
-             #binding-cells = <2>;
-             tapping-term-ms = <100>;
-             quick-tap-ms = <0>;
-             flavor = "tap-preferred";
-             bindings = <&kp>, <&kp>;
+            compatible = "zmk,behavior-hold-tap";
+            label = "WIN_Z_HOLD_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
 
         custom_sticky: custom_sticky {
