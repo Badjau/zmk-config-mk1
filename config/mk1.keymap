@@ -26,8 +26,7 @@
             tapping-term-ms = <200>; //hold timer to send hold key
             quick-tap-ms = <200>; //when tapped within timer, disable hold and send tap; for repeated presses
             require-prior-idle-ms = <125>; //When key press before timer, disable hold
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "tap-unless-interrupted";
             bindings = <&kp>, <&kp>;
         };
 
@@ -53,9 +52,9 @@
              compatible = "zmk,behavior-hold-tap";
              label = "ULT_SHIFT";
              #binding-cells = <2>;
-             tapping-term-ms = <100>;
-             quick-tap-ms = <0>;
-             flavor = "hold-preferred";
+             tapping-term-ms = <125>;
+             quick-tap-ms = <200>;
+             flavor = "balanced";
              bindings = <&kp>, <&td_shift>; //binding set to LSHFT in keymap ex: "&ult_shift LSHFT 0"
         };
  
