@@ -24,9 +24,9 @@
             label = "WIN_Z_HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>; //hold timer to send hold key
-            quick-tap-ms = <200>; //when tapped within timer, disable hold and send tap; for repeated presses
+            quick-tap-ms = <500>; //when tapped within timer, disable hold and send tap; for repeated presses
             require-prior-idle-ms = <125>; //When key press before timer, disable hold
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 
