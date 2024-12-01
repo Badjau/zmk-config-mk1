@@ -2,7 +2,7 @@
  * Size: 12 px
  * Bpp: 1
  * Opts: --font PixelOperatorMono.ttf --size 12 --format lvgl --bpp 1 --range
- *0x20-0x7F --no-compress -o pixel_operator_mono_12.c
+ *0x20-0x7F --no-compress -o PIXEL_OPERATOR_MONO.c
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
@@ -15,7 +15,7 @@
 #define PIXEL_OPERATOR_MONO 1
 #endif
 
-#if PIXEL_OPERATOR_MONO_12
+#if PIXEL_OPERATOR_MONO
 
 /*-----------------
  *    BITMAPS
@@ -938,9 +938,9 @@ static lv_font_fmt_txt_dsc_t font_dsc = {
 
 /*Initialize a public general font descriptor*/
 #if LVGL_VERSION_MAJOR >= 8
-const lv_font_t pixel_operator_mono_12 = {
+const lv_font_t PIXEL_OPERATOR_MONO = {
 #else
-lv_font_t pixel_operator_mono_12 = {
+lv_font_t PIXEL_OPERATOR_MONO = {
 #endif
     .get_glyph_dsc =
         lv_font_get_glyph_dsc_fmt_txt, /*Function pointer to get glyph's data*/
@@ -963,4 +963,4 @@ lv_font_t pixel_operator_mono_12 = {
     .user_data = NULL,
 };
 
-#endif /*#if PIXEL_OPERATOR_MONO_12*/
+#endif /*#if PIXEL_OPERATOR_MONO*/
