@@ -52,7 +52,7 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 
   lv_draw_rect_dsc_t rect_white_dsc;
   init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
-  lv_canvas_draw_rect(canvas, -3, 32, 24, 15, &rect_white_dsc);
+  //lv_canvas_draw_rect(canvas, -3, 32, 24, 15, &rect_white_dsc);
   // lv_canvas_draw_rect(canvas, 43, 0, 24, 15, &rect_white_dsc);
 
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
