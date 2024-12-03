@@ -4,6 +4,8 @@
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "assets/pixel_operator_mono.c"
+#include "assets/pixel_operator_mono_8.c"
+#include "assets/pixel_operator_mono_12.c"
 // auto save conflict
 #include "assets/custom_fonts.h"
 
