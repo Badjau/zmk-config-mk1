@@ -34,7 +34,7 @@ static void draw_charging_level(lv_obj_t *canvas,
   // sprintf(text, "%i%%", state->battery);
   lv_canvas_draw_text(canvas, 0, 50, 35, &label_right_dsc, text);
   // lv_canvas_draw_text(canvas, 1, 50, 35, &label_right_dsc, text);
-  lv_canvas_draw_img(canvas, 5, 50, &bolt, &img_dsc);
+  lv_canvas_draw_img(canvas, 1, 50, &bolt, &img_dsc);
   // lv_canvas_draw_img(canvas, 0, 50, &bolt, &img_dsc);
 }
 
