@@ -3,7 +3,11 @@
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
-//#include "assets/pixel_operator_mono.c"
+#include "assets/pixel_operator_mono.c"
+#include "assets/pixel_operator_mono_8.c"
+#include "assets/pixel_operator_mono_12.c"
+#include "assets/pixel_operator_mono.c"
+// including other fonts cause redefinition of 'glyph_bitmap' error, and so on.
 // auto save conflict
 #include "assets/custom_fonts.h"
 
