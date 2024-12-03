@@ -312,7 +312,7 @@ static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap_8[] = {
  *  GLYPH DESCRIPTION
  *--------------------*/
 
-static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
+static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc_8[] = {
     {.bitmap_index = 0,
      .adv_w = 0,
      .box_w = 0,
