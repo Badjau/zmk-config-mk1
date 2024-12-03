@@ -895,7 +895,7 @@ static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc_8[] = {
  *--------------------*/
 
 /*Collect the unicode lists and glyph_id offsets*/
-static const lv_font_fmt_txt_cmap_t cmaps[] = {
+static const lv_font_fmt_txt_cmap_t cmaps_8[] = {
     {.range_start = 32,
      .range_length = 95,
      .glyph_id_start = 1,
