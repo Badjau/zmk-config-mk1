@@ -181,7 +181,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, -18, -18);
 #endif
 #if IS_ENABLED(CONFIG_NICE_OLED_CUSTOM_ANIMATION)
-    lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, -18);
+    lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, 0);
 #endif
 #if IS_ENABLED(CONFIG_NICE_OLED_VIM)
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, 0, 0);
