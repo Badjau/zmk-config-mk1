@@ -76,6 +76,7 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     if (state->active_profile_bonded) {
       if (state->active_profile_connected) {
         draw_ble_connected(canvas);
+        render_bluetooth_profile_index(canvas);
       } else {
         draw_ble_disconnected(canvas);
       }
