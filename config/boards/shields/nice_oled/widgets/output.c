@@ -42,17 +42,6 @@ static void draw_ble_connected(lv_obj_t *canvas) {
   // lv_canvas_draw_img(canvas, 49, 0, &bt, &img_dsc);
 }
 
-static void render_bluetooth_profile_index(lv_obj_t *canvas) {
-    lv_draw_label_dsc_t label_right_dsc;
-    init_label_dsc(&label_right_dsc, LVGL_FOREGROUND, &pixel_operator_mono_12, LV_TEXT_ALIGN_RIGHT);
-
-    char text[5] = {};
-    sprintf(text, "%d", state->active_profile_index + 1);
-
-    // x, y, width, dsc, text
-    lv_canvas_draw_text(canvas, 0, 32, 42, &label_right_dsc, text);
-}
-
 void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
   /*
   lv_draw_label_dsc_t label_dsc;
@@ -76,7 +65,6 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     if (state->active_profile_bonded) {
       if (state->active_profile_connected) {
         draw_ble_connected(canvas);
-        render_bluetooth_profile_index(canvas);
       } else {
         draw_ble_disconnected(canvas);
       }
