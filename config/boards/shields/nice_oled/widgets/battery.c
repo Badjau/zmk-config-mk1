@@ -6,7 +6,7 @@ LV_IMG_DECLARE(bolt);
 
 static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
   lv_draw_label_dsc_t label_right_dsc;
-  init_label_dsc(&label_right_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_CENTER);
+  init_label_dsc(&label_right_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_LEFT);
   // LV_TEXT_ALIGN_RIGHT);
 
   char text[10] = {};
@@ -14,7 +14,7 @@ static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
   sprintf(text, "%i%%", state->battery);
   // sprintf(text, "%i%%", state->battery);
   // x, y, width, dsc, text
-  lv_canvas_draw_text(canvas, 0, 50, 42, &label_right_dsc, text);
+  lv_canvas_draw_text(canvas, 4, 50, 42, &label_right_dsc, text);
   // lv_canvas_draw_text(canvas, -6, 50, 42, &label_right_dsc, text);
 }
 

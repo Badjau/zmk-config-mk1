@@ -10,7 +10,7 @@ static void draw_inactive_profiles(lv_obj_t *canvas,
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, 0, 133, &profiles, &img_dsc);
+  lv_canvas_draw_img(canvas, 0, 131, &profiles, &img_dsc);
   // lv_canvas_draw_img(canvas, 18, 129, &profiles, &img_dsc);
 }
 
@@ -21,7 +21,7 @@ static void draw_active_profile(lv_obj_t *canvas,
 
   int offset = state->active_profile_index * 7;
 
-  lv_canvas_draw_rect(canvas, 0 + offset, 134, 5, 5, &rect_white_dsc);
+  lv_canvas_draw_rect(canvas, 0 + offset, 130, 5, 5, &rect_white_dsc);
   // lv_canvas_draw_rect(canvas, x, y, rect height, rect width, &rect_white_dsc);
 }
 
