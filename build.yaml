@@ -20,5 +20,5 @@
 include:
   - board: nice_nano_v2
     shield: mk1_left nice_oled
-  - board: nice_nano_v2
-    shield: mk1_right nice_oled
+  # - board: nice_nano_v2
+  #   shield: mk1_right nice_oled
