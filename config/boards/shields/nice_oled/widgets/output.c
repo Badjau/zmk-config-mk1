@@ -47,7 +47,7 @@ static void render_bluetooth_profile_index(lv_obj_t *canvas, const struct status
     init_label_dsc(&label_right_dsc, LVGL_FOREGROUND, &pixel_operator_mono_12, LV_TEXT_ALIGN_RIGHT);
 
     char text[5] = {};
-    sprintf(text, "%d", state->connectivity.active_profile_index + 1);
+    sprintf(text, "%d", state->active_profile_index + 1);
 
     // x, y, width, dsc, text
     lv_canvas_draw_text(canvas, 0, 32, 42, &label_right_dsc, text);
