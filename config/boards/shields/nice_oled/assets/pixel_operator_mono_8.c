@@ -918,9 +918,9 @@ static const lv_font_fmt_txt_dsc_t font_dsc_8= {
 #else
 static lv_font_fmt_txt_dsc_t font_dsc_8= {
 #endif
-    .glyph_bitmap = glyph_bitmap,
-    .glyph_dsc = glyph_dsc,
-    .cmaps = cmaps,
+    .glyph_bitmap = glyph_bitmap_8,
+    .glyph_dsc = glyph_dsc_8,
+    .cmaps = cmaps_8,
     .kern_dsc = NULL,
     .kern_scale = 0,
     .cmap_num = 1,
@@ -955,7 +955,7 @@ lv_font_t pixel_operator_mono_8 = {
     .underline_position = -1,
     .underline_thickness = 1,
 #endif
-    .dsc = &font_dsc, /*The custom font data. Will be accessed by
+    .dsc = &font_dsc_8, /*The custom font data. Will be accessed by
                          `get_glyph_bitmap/dsc` */
 #if LV_VERSION_CHECK(8, 2, 0) || LVGL_VERSION_MAJOR >= 9
     .fallback = NULL,

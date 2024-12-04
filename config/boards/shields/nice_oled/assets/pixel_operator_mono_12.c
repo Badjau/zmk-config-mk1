@@ -22,7 +22,7 @@
  *----------------*/
 
 /*Store the image of the glyphs*/
-static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
+static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap_12[] = {
     /* U+0020 " " */
     0x0,
 
@@ -312,7 +312,7 @@ static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
  *  GLYPH DESCRIPTION
  *--------------------*/
 
-static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
+static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc_12[] = {
     {.bitmap_index = 0,
      .adv_w = 0,
      .box_w = 0,
@@ -895,7 +895,7 @@ static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
  *--------------------*/
 
 /*Collect the unicode lists and glyph_id offsets*/
-static const lv_font_fmt_txt_cmap_t cmaps[] = {
+static const lv_font_fmt_txt_cmap_t cmaps_12[] = {
     {.range_start = 32,
      .range_length = 95,
      .glyph_id_start = 1,
@@ -914,13 +914,13 @@ static lv_font_fmt_txt_glyph_cache_t cache;
 #endif
 
 #if LVGL_VERSION_MAJOR >= 8
-static const lv_font_fmt_txt_dsc_t font_dsc = {
+static const lv_font_fmt_txt_dsc_t font_dsc_12 = {
 #else
-static lv_font_fmt_txt_dsc_t font_dsc = {
+static lv_font_fmt_txt_dsc_t font_dsc_12 = {
 #endif
-    .glyph_bitmap = glyph_bitmap,
-    .glyph_dsc = glyph_dsc,
-    .cmaps = cmaps,
+    .glyph_bitmap = glyph_bitmap_12,
+    .glyph_dsc = glyph_dsc_12,
+    .cmaps = cmaps_12,
     .kern_dsc = NULL,
     .kern_scale = 0,
     .cmap_num = 1,
@@ -955,7 +955,7 @@ lv_font_t pixel_operator_mono_12 = {
     .underline_position = -2,
     .underline_thickness = 1,
 #endif
-    .dsc = &font_dsc, /*The custom font data. Will be accessed by
+    .dsc = &font_dsc_12, /*The custom font data. Will be accessed by
                          `get_glyph_bitmap/dsc` */
 #if LV_VERSION_CHECK(8, 2, 0) || LVGL_VERSION_MAJOR >= 9
     .fallback = NULL,
