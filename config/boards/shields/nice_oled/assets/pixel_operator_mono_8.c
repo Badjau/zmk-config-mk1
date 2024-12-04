@@ -2,7 +2,7 @@
  * Size: 8 px
  * Bpp: 1
  * Opts: --font PixelOperatorMono.ttf --size 8 --format lvgl --bpp 1 --range
- *0x20-0x7F --no-compress -o pixel_operator_mono_8.c
+ * 0x20-0x7F --no-compress -o pixel_operator_mono_8.c
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
