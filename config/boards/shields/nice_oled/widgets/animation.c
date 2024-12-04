@@ -59,6 +59,43 @@ const lv_img_dsc_t *anim_imgs[] = {
 };
 #endif
 
+#if IS_ENABLED(CONFIG_NICE_OLED_CUSTOM_ANIMATION)
+// 01 to 20
+LV_IMG_DECLARE(custom_01);
+LV_IMG_DECLARE(custom_02);
+LV_IMG_DECLARE(custom_03);
+LV_IMG_DECLARE(custom_04);
+LV_IMG_DECLARE(custom_05);
+LV_IMG_DECLARE(custom_06);
+LV_IMG_DECLARE(custom_07);
+LV_IMG_DECLARE(custom_08);
+LV_IMG_DECLARE(custom_09);
+LV_IMG_DECLARE(custom_10);
+LV_IMG_DECLARE(custom_11);
+LV_IMG_DECLARE(custom_12);
+LV_IMG_DECLARE(custom_13);
+LV_IMG_DECLARE(custom_14);
+LV_IMG_DECLARE(custom_15);
+LV_IMG_DECLARE(custom_16);
+LV_IMG_DECLARE(custom_17);
+LV_IMG_DECLARE(custom_18);
+LV_IMG_DECLARE(custom_19);
+LV_IMG_DECLARE(custom_20);
+LV_IMG_DECLARE(custom_21);
+LV_IMG_DECLARE(custom_22);
+LV_IMG_DECLARE(custom_23);
+LV_IMG_DECLARE(custom_24);
+LV_IMG_DECLARE(custom_25);
+
+const lv_img_dsc_t *anim_imgs[] = {
+    &custom_01, &custom_02, &custom_03, &custom_04, &custom_05,
+    &custom_06, &custom_07, &custom_08, &custom_09, &custom_10,
+    &custom_11, &custom_12, &custom_13, &custom_14, &custom_15,
+    &custom_16, &custom_17, &custom_18, &custom_19, &custom_20,
+    &custom_21, &custom_22, &custom_23, &custom_23, &custom_25,
+};
+#endif
+
 // NICE_OLEDE_OLED
 #if IS_ENABLED(CONFIG_NICE_OLED_VIM)
 LV_IMG_DECLARE(vim);
@@ -90,6 +127,19 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
   lv_animimg_set_src(art, (const void **)anim_imgs, 20);
   lv_animimg_set_duration(art, CONFIG_NICE_OLED_POKEMON_ANIMATION_MS);
+  lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
+  lv_animimg_start(art);
+
+  // fix the error compiling if the images are not used
+  lv_obj_t *art2 = NULL; // Para la segunda imagen, si es necesario
+#endif
+
+#if IS_ENABLED(CONFIG_NICE_OLED_CUSTOM_ANIMATION)
+  lv_obj_t *art = lv_animimg_create(widget->obj);
+  lv_obj_center(art);
+
+  lv_animimg_set_src(art, (const void **)anim_imgs, 25);
+  lv_animimg_set_duration(art, CONFIG_NICE_OLED_CUSTOM_MS);
   lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
   lv_animimg_start(art);
 
@@ -129,6 +179,9 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #endif
 #if IS_ENABLED(CONFIG_NICE_OLED_POKEMON_ANIMATION)
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, -18, -18);
+#endif
+#if IS_ENABLED(CONFIG_NICE_OLED_CUSTOM_ANIMATION)
+    lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, -18);
 #endif
 #if IS_ENABLED(CONFIG_NICE_OLED_VIM)
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, 0, 0);
