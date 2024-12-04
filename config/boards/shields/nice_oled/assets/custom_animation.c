@@ -86,8 +86,8 @@ const lv_img_dsc_t custom_02 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.always_zero = 0,
     .header.reserved = 0,
-    .header.w = 32,
-    .header.h = 70,
+    .header.w = 70,
+    .header.h = 32,
     .data_size = 288,
     .data = custom_02_map,
 };
