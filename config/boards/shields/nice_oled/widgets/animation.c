@@ -89,18 +89,20 @@ LV_IMG_DECLARE(custom_25);
 
 const lv_img_dsc_t *anim_imgs[] = {
     &custom_01, &custom_01, &custom_02, &custom_02, &custom_01, &custom_01, 
-    &custom_02, &custom_02, &custom_03, &custom_03, &custom_04, &custom_04, 
-    &custom_03, &custom_03, &custom_04, &custom_05, &custom_05, &custom_06, 
-    &custom_07, &custom_07, &custom_08, &custom_08, &custom_09, &custom_09,
-    &custom_08, &custom_08, &custom_09, &custom_09, &custom_10, &custom_10, 
-    &custom_11, &custom_11, &custom_12, &custom_12, &custom_14, &custom_14,
-    &custom_15, &custom_15, &custom_14, &custom_14, &custom_15, &custom_15, 
-    &custom_16, &custom_16, &custom_17, &custom_17, &custom_17, &custom_17, 
-    &custom_18, &custom_18, &custom_18, &custom_19, &custom_19, &custom_20,
-    &custom_20, &custom_19, &custom_19, &custom_21, &custom_21, &custom_21,
-    &custom_22, &custom_22, &custom_23, &custom_23, &custom_23, &custom_24, 
-    &custom_24, &custom_25, &custom_24, &custom_25, &custom_24, &custom_25, 
-    &custom_24, &custom_25, &custom_24, &custom_25, 
+    &custom_02, &custom_02, &custom_03, &custom_03, &custom_03, &custom_04, 
+    &custom_04, &custom_03, &custom_03, &custom_04, &custom_05, &custom_05, 
+    &custom_05, &custom_06, &custom_06, &custom_07, &custom_07, &custom_07, 
+    &custom_07, &custom_08, &custom_08, &custom_09, &custom_09, &custom_08, 
+    &custom_08, &custom_09, &custom_09, &custom_10, &custom_10, &custom_11, 
+    &custom_11, &custom_11, &custom_12, &custom_12, &custom_12, &custom_14, 
+    &custom_14, &custom_14, &custom_15, &custom_15, &custom_14, &custom_14, 
+    &custom_15, &custom_15, &custom_14, &custom_14, &custom_16, &custom_16, 
+    &custom_17, &custom_17, &custom_17, &custom_18, &custom_18, &custom_18, 
+    &custom_19, &custom_19, &custom_20, &custom_20, &custom_19, &custom_19, 
+    &custom_21, &custom_21, &custom_21, &custom_22, &custom_22, &custom_22, 
+    &custom_23, &custom_23, &custom_23, &custom_24, &custom_24, &custom_25, 
+    &custom_25, &custom_24, &custom_24, &custom_25, &custom_25, &custom_25, 
+    &custom_24, &custom_24,
 };
 #endif
 
