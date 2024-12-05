@@ -20,7 +20,7 @@ static void draw_gauge(lv_obj_t *canvas, const struct status_state *state) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, 0, 75, &gauge, &img_dsc);
+  lv_canvas_draw_img(canvas, 0, 85, &gauge, &img_dsc);
   // lv_canvas_draw_img(canvas, 16, 43, &gauge, &img_dsc);
 }
 
@@ -78,7 +78,7 @@ static void draw_grid(lv_obj_t *canvas) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, -1, 100, &grid, &img_dsc);
+  lv_canvas_draw_img(canvas, -1, 110, &grid, &img_dsc);
   // lv_canvas_draw_img(canvas, -1, 100, &grid, &img_dsc);
 }
 
@@ -141,11 +141,11 @@ static void draw_label(lv_obj_t *canvas, const struct status_state *state) {
   snprintf(wpm_text, sizeof(wpm_text), "%d", state->wpm[9]);
   // if wpm < 10, elsse if wpm => 10 and wpm < 100, else wpm >= 100
   if (state->wpm[9] < 10) {
-    lv_canvas_draw_text(canvas, 12, 80, 50, &label_dsc_wpm, wpm_text);
+    lv_canvas_draw_text(canvas, 12, 90, 50, &label_dsc_wpm, wpm_text);
   } else if (state->wpm[9] >= 10 && state->wpm[9] < 100) {
-    lv_canvas_draw_text(canvas, 8, 80, 50, &label_dsc_wpm, wpm_text);
+    lv_canvas_draw_text(canvas, 8, 90, 50, &label_dsc_wpm, wpm_text);
   } else {
-    lv_canvas_draw_text(canvas, 5, 80, 50, &label_dsc_wpm, wpm_text);
+    lv_canvas_draw_text(canvas, 5, 90, 50, &label_dsc_wpm, wpm_text);
   }
   // lv_canvas_draw_text(canvas, 0, 103, 50, &label_dsc_wpm, wpm_text);
 }
