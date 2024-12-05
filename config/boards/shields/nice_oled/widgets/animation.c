@@ -91,9 +91,9 @@ const lv_img_dsc_t *anim_imgs[] = {
     &custom_01, &custom_01, &custom_02, &custom_02, &custom_01, &custom_01, 
     &custom_02, &custom_02, &custom_03, &custom_03, &custom_03, &custom_04, 
     &custom_04, &custom_03, &custom_03, &custom_04, &custom_05, &custom_05, 
-    &custom_05, &custom_06, &custom_06, &custom_07, &custom_07, &custom_07, 
-    &custom_07, &custom_08, &custom_08, &custom_09, &custom_09, &custom_08, 
-    &custom_08, &custom_09, &custom_09, &custom_10, &custom_10, &custom_11, 
+    &custom_05, &custom_06, &custom_06, &custom_08, &custom_08, &custom_09, 
+    &custom_09, &custom_08, &custom_08, &custom_09, &custom_09, &custom_10, 
+    &custom_10, &custom_11, 
     &custom_11, &custom_11, &custom_12, &custom_12, &custom_12, &custom_14, 
     &custom_14, &custom_14, &custom_15, &custom_15, &custom_14, &custom_14, 
     &custom_15, &custom_15, &custom_14, &custom_14, &custom_16, &custom_16, 
@@ -102,7 +102,9 @@ const lv_img_dsc_t *anim_imgs[] = {
     &custom_21, &custom_21, &custom_21, &custom_22, &custom_22, &custom_22, 
     &custom_23, &custom_23, &custom_23, &custom_24, &custom_24, &custom_25, 
     &custom_25, &custom_24, &custom_24, &custom_25, &custom_25, &custom_25, 
-    &custom_24, &custom_24,
+    &custom_24, &custom_24, &custom_22, &custom_22, &custom_22, &custom_08, 
+    &custom_08, &custom_08, &custom_05, &custom_05, &custom_03, &custom_03,
+    &custom_01, 
 };
 #endif
 
@@ -148,7 +150,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
   lv_obj_t *art = lv_animimg_create(widget->obj);
   lv_obj_center(art);
 
-  lv_animimg_set_src(art, (const void **)anim_imgs, 86);
+  lv_animimg_set_src(art, (const void **)anim_imgs, 93);
   lv_animimg_set_duration(art, CONFIG_NICE_OLED_CUSTOM_ANIMATION_MS);
   lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
   lv_animimg_start(art);
