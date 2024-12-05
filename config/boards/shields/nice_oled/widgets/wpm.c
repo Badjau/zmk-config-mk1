@@ -29,7 +29,7 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
   init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
   int centerX = 12; // 16 default
-  int centerY = 100; // 100 gut, 66 default
+  int centerY = 120; // 100 gut, 66 default
   int offset = 5;   // 5 def, largo de la aguja
   int value = state->wpm[9];
 
@@ -78,7 +78,7 @@ static void draw_grid(lv_obj_t *canvas) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, -1, 120, &grid, &img_dsc);
+  lv_canvas_draw_img(canvas, -1, 110, &grid, &img_dsc);
   // lv_canvas_draw_img(canvas, -1, 100, &grid, &img_dsc);
 }
 
