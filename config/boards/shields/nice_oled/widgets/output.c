@@ -12,7 +12,7 @@ static void draw_usb_connected(lv_obj_t *canvas) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, 6, 34, &usb, &img_dsc);
+  lv_canvas_draw_img(canvas, 6, 53, &usb, &img_dsc);
   // lv_canvas_draw_img(canvas, 45, 2, &usb, &img_dsc);
 }
 
@@ -21,7 +21,7 @@ static void draw_ble_unbonded(lv_obj_t *canvas) {
   lv_draw_img_dsc_init(&img_dsc);
 
   // 36 - 39
-  lv_canvas_draw_img(canvas, 4, 32, &bt_unbonded, &img_dsc);
+  lv_canvas_draw_img(canvas, 4, 55, &bt_unbonded, &img_dsc);
   // lv_canvas_draw_img(canvas, 44, 0, &bt_unbonded, &img_dsc);
 }
 #endif
@@ -30,7 +30,7 @@ static void draw_ble_disconnected(lv_obj_t *canvas) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, 9, 32, &bt_no_signal, &img_dsc);
+  lv_canvas_draw_img(canvas, 9, 55, &bt_no_signal, &img_dsc);
   // lv_canvas_draw_img(canvas, 49, 0, &bt_no_signal, &img_dsc);
 }
 
@@ -38,7 +38,7 @@ static void draw_ble_connected(lv_obj_t *canvas) {
   lv_draw_img_dsc_t img_dsc;
   lv_draw_img_dsc_init(&img_dsc);
 
-  lv_canvas_draw_img(canvas, 9, 32, &bt, &img_dsc);
+  lv_canvas_draw_img(canvas, 9, 55, &bt, &img_dsc);
   // lv_canvas_draw_img(canvas, 49, 0, &bt, &img_dsc);
 }
 
