@@ -29,7 +29,7 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
   init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
   int centerX = 12; // 16 default
-  int centerY = 95; // 100 gut, 66 default
+  int centerY = 98; // 100 gut, 66 default
   int offset = 5;   // 5 def, largo de la aguja
   int value = state->wpm[9];
 
@@ -101,7 +101,7 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
     }
     // modificar aqui par la posicion de la grafica
     points[i].x = -36 + i * 7.4;
-    points[i].y = 127 - (value * 32 / max);
+    points[i].y = 25 - (value * 32 / max);
     // points[i].y = 132 - (value * 32 / max);
   }
 #else
