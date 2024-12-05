@@ -29,7 +29,7 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
   init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
   int centerX = 12; // 16 default
-  int centerY = 115; // 100 gut, 66 default
+  int centerY = 90; // 100 gut, 66 default
   int offset = 5;   // 5 def, largo de la aguja
   int value = state->wpm[9];
 
