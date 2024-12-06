@@ -38,7 +38,7 @@ static void draw_active_profile_text(lv_obj_t *canvas,
   char text[14] = {};
   snprintf(text, sizeof(text), "%d", state->active_profile_index + 1);
 
-  lv_canvas_draw_text(canvas, 25, 32, 35, &label_dsc, text);
+  lv_canvas_draw_text(canvas, 25, 47, 35, &label_dsc, text);
 }
 
 void draw_profile_status(lv_obj_t *canvas, const struct status_state *state) {
