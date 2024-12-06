@@ -123,10 +123,10 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
   }
 
 
-  int graphYOffset = 85; // Add a new variable for the graph offset
+ 
   for (int i = 0; i < 10; i++) {
     points[i].x = 0 + i * 7.4;
-    points[i].y = graphYOffset - (state->wpm[i] - min) * 32 / range;
+    points[i].y = 115 - (state->wpm[i] - min) * 32 / range;
   }
 #endif
 
