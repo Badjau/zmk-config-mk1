@@ -126,7 +126,7 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
  
   for (int i = 0; i < 10; i++) {
     points[i].x = 0 + i * 7.4;
-    points[i].y = 115 - (state->wpm[i] - min) * 32 / range;
+    points[i].y = 80 - (state->wpm[i] - min) * 32 / range;
   }
 #endif
 
