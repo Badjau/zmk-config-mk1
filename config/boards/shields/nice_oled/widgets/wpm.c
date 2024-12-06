@@ -24,12 +24,12 @@ static void draw_gauge(lv_obj_t *canvas, const struct status_state *state) {
   // lv_canvas_draw_img(canvas, 16, 43, &gauge, &img_dsc);
 }
 
-static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
+static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {\
   lv_draw_line_dsc_t line_dsc;
   init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
   int centerX = 12; // 16 default
-  int centerY = 98; // 100 gut, 66 default
+  int centerY = 105; // 100 gut, 66 default
   int offset = 5;   // 5 def, largo de la aguja
   int value = state->wpm[9];
 
@@ -122,9 +122,12 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
     range = 1;
   }
 
+
+  int graphYOffset = 85; // Add a new variable for the graph offset
+  points[i].y = graphYOffset - (value * 32 / max);
   for (int i = 0; i < 10; i++) {
     points[i].x = 0 + i * 7.4;
-    points[i].y = 25 - (state->wpm[i] - min) * 32 / range;
+    points[i].y = graphYOffset - (state->wpm[i] - min) * 32 / range;
   }
 #endif
 

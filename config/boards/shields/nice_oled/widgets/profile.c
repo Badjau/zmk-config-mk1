@@ -31,7 +31,7 @@ static void draw_active_profile_text(lv_obj_t *canvas,
                                      const struct status_state *state) {
   // new label_dsc
   lv_draw_label_dsc_t label_dsc;
-  init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_8,
+  init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_10,
                  LV_TEXT_ALIGN_LEFT);
 
   // buffer size should be enough for largest number + null character
