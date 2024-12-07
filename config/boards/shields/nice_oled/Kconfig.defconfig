@@ -59,7 +59,7 @@ config NICE_OLED_CUSTOM_ANIMATION
 
 config NICE_OLED_CUSTOM_ANIMATION_MS
     int "Animation length in milliseconds"
-    default 19200
+    default 14400
 
 config NICE_OLED_VIM
     bool "Enable static vim on peripheral"
