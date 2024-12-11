@@ -12,16 +12,17 @@
             keep-mods = <(MOD_LALT|MOD_RALT)>;
         };
         
-        bspc_del: backspace_delete {
+        spc_del: space_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            bindings = <&kp SPACE>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
+ 
         win_z: win_z_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "WIN_Z_HOLD_TAP";
+            label = "WIN_Z _HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>; //hold timer to send hold key
             quick-tap-ms = <500>; //when tapped within timer, disable hold and send tap; for repeated presses
@@ -132,7 +133,7 @@
                 &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                 &ult_shift LSHFT 0  &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                 &kp LCTRL           &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 4 
-                                                                &slmo1 1 1  &kp SPACE   &kp LALT    &kp ENTER  &bspc_del    &slmo2 3 3  
+                                                                &slmo1 1 1  &spc_del    &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 3  
             >;
         };
 
@@ -141,9 +142,9 @@
             display-name = "Number";
             bindings = <
                 &kp ESC         &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
-                &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
-                &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
-                                                                                &to 0       &trans      &kp LALT    &trans      &trans      &to 0  
+                &trans          &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans      &trans      &trans      &kp LBKT    &kp LBKT    &kp MINUS   &kp EQUAL
+                &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
+                                                        &to 0       &trans      &trans      &trans      &trans      &to 0  
             >;
         };
 
@@ -154,7 +155,7 @@
                 &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12
                 &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
                 &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
-                                                        &to 0       &trans      &kp LALT    &kp K_APP   &trans      &to 0  
+                                                        &to 0       &trans      &trans      &kp K_APP   &trans      &to 0  
             >;
         };
 
@@ -168,7 +169,7 @@
                                                     &trans      &trans      &trans      &trans      &trans      &trans  
                 >;
             };
-        // Layer 4 (Activated on tap)
+        // Layer 4 (Activated on hold)
         Shortcut_layer {
             display-name = "Shortcut";
             bindings = <
