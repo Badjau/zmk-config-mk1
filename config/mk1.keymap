@@ -17,7 +17,7 @@
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
  
         win_z: win_z_hold_tap {
