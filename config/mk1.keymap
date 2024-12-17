@@ -132,8 +132,8 @@
                 bindings = <   
                     &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                     &ult_shift LSHFT 0  &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
-                    &kp LCTRL           &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 4 
-                                                                    &slmo1 1 1  &spc_del    &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 3  
+                    &kp LCTRL           &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 5 
+                                                                    &slmo1 2 2  &spc_del    &kp LALT    &kp ENTER  &kp BSPC     &slmo2 3 3  
                 >;
             };
             // Layer 1 (Activated on Tap)
