@@ -122,7 +122,7 @@
                 timeout-ms = <50>;
                 key-positions = <0 1>; //TAB + Q
                 bindings = <&kp ESC>;
-                layers = <0 2 3 4>;
+                layers = <0 1 2 3 4>;
             };
         };
         
