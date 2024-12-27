@@ -109,7 +109,7 @@
                 label = "ALT_ENTER";
                 #binding-cells = <0>;
                 tapping-term-ms = <250>;
-                bindings = <&kp ALT>, <&kp ENTER>;    // First tap = sticky layer 1, double tap = switch to layer 1
+                bindings = <&kp LALT>, <&kp ENTER>;    // First tap = sticky layer 1, double tap = switch to layer 1
             };
         };
         macros {
