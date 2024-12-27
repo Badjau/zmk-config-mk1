@@ -103,6 +103,14 @@
                 flavor = "hold-preferred";
                 bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
             };
+        
+            altenter: alt_enter {
+                compatible = "zmk,behavior-tap-dance";
+                label = "ALT_ENTER";
+                #binding-cells = <0>;
+                tapping-term-ms = <250>;
+                bindings = <&kp ALT>, <&kp ENTER>;    // First tap = sticky layer 1, double tap = switch to layer 1
+            };
         };
         macros {
             sleep_macro: sleep_macro {
@@ -134,7 +142,7 @@
                     &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                     &ult_shift LSHFT 0  &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                     &kp LCTRL           &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 5 
-                                                                    &slmo1 2 2  &spc_del    &kp LALT    &kp ENTER  &kp BSPC     &slmo2 4 4  
+                                                                    &slmo1 2 2  &spc_del    &altenter    &kp ENTER  &kp BSPC     &slmo2 4 4  
                 >;
             };
             // Layer 1 (Activated on Tap)
@@ -154,7 +162,7 @@
                     &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
                     &trans          &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans      &trans      &trans      &kp LBKT    &kp LBKT    &kp MINUS   &kp EQUAL
                     &trans          &trans      &kp BSPC    &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
-                                                            &to 0       &kp ENTER   &trans      &trans      &trans      &to 0  
+                                                            &to 0       &trans      &altenter   &trans      &trans      &to 0  
                 >;
             };
 
