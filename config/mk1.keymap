@@ -12,7 +12,7 @@
                 keep-mods = <(MOD_LALT|MOD_RALT)>;
             };
 
-            skqq: sticky_key_quick_release {
+            skq: sticky_key_quick_release {
                 compatible = "zmk,behavior-sticky-key";
                 #binding-cells = <1>;
                 bindings = <&kp>;
