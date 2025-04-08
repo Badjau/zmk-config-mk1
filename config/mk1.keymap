@@ -12,14 +12,24 @@
                 keep-mods = <(MOD_LALT|MOD_RALT)>;
             };
 
+            mt: mod_tap {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&kp>, <&skq>;
+                display-name = "Mod-Tap";
+            };
+
             skq: sticky_key_quick_release {
                 compatible = "zmk,behavior-sticky-key";
                 #binding-cells = <1>;
                 bindings = <&kp>;
-                release-after-ms = <1000>;
+                release-after-ms = <500>;
                 quick-release;
                 ignore-modifiers;
             };
+            
             
             spc_del: space_delete {
                 compatible = "zmk,behavior-mod-morph";
@@ -38,15 +48,6 @@
                 require-prior-idle-ms = <125>; //When key press before timer, disable hold
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
-            };
-
-            custom_sticky: custom_sticky {
-                compatible = "zmk,behavior-sticky-key";
-                label = "STICKY_SHIFT";
-                #binding-cells = <1>;
-                bindings = <&kp>;
-                release-after-ms = <800>;
-                quick-release;                // Makes it release immediately after a keypress
             };
 
             not_so_sticky: not_so_sticky { //useful for combinations
@@ -155,8 +156,8 @@
                 display-name = "Base";
                 bindings = <   
                     &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
-                    &skq LSHFT          &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
-                    &skq LCTRL          &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 5 
+                    &mt LSHFT          &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
+                    &mt LCTRL          &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 5 
                                                                     &slmo1 2 2  &spc_del    &altenter   &kp ENTER  &kp BSPC     &slmo2 4 4  
                 >;
             };
