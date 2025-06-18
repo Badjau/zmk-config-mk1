@@ -4,8 +4,6 @@ The original design featured slits and gaps that gave the keyboard an "open" aes
   
 Keycaps: "WOB" SA profile doubleshot ABS 
 ## Gallery
-
-### **TBK-"Micro"**
 ![Keyboard](images/keyb.jpg)
 ---
 
@@ -18,10 +16,10 @@ Keycaps: "WOB" SA profile doubleshot ABS
 This was my first ever custom keyboard. I learned blender in order to manipulate and modify the base 3D model where I learned that vertices, and topology management, is hard... I even had a back and forth on using CAD and Blender to see which one is easier, as I also tried modifying the CAD file, which I did first. I then finalized and fine tuned using blender. Soldering the diodes was an easy task. Wires however, is a challenge on its own; some broke off after soldering, even breaking the pads they were soldered on after the fact. I fixed this by using a lot of flux and adjusting the heat. The microcontroller's attachment is also not the best; I had to remove, soldering off some parts inside, and the USB port in order to make it fit. 
 
 ## Special Thanks To:
-* [Bastardkb](https://github.com/Bastardkb/).  
+* [Bastardkb](https://github.com/Bastardkb/)
 * ZMK, and the ZMK community
 * ErgoMechKeyboards community
-
+* [mctechnology17](https://github.com/mctechnology17/zmk-nice-oled/tree/main) for the extra OLED functionalities.
 ## License
 This project is a derivative of the [TBK Mini](https://github.com/OriginalRepo/TBK-Mini)  
 licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
