@@ -5,6 +5,7 @@ The original design featured slits and gaps that gave the keyboard an "open" aes
 Keycaps: "WOB" SA profile doubleshot ABS 
 ## Gallery
 ![Keyboard](images/keyb.jpg)
+![Keyboard](images/internals.jpg)
 ---
 
 ### OLED views 
