@@ -24,10 +24,16 @@ Keycaps: "WOB" SA profile doubleshot ABS
 * Left split shows a nice little _typing_ animation of the logo, along with the name.  
 ![OLED Displays GIF](images/OLEDdisplay.gif) 
 ![OLED Displays](images/OLEDdisplay.jpg)
+---
 
 ### 3D model
 ![comparison 1](images/comparison.jpg) 
 ![comparison 2](images/comparison(2).jpg)
+---
+### WIP pics
+![wip1](images/wip.jpg) 
+![wip2](images/wip(2).jpg)
+---
 
 ## Write-up and Rants
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This was my first ever custom keyboard. I learned blender in order to manipulate and modify the base 3D model where I learned that vertices, and topology management, is hard... I even had a back and forth on whether to use CAD or Blender first, to see which one is easier. I finally decided on modifying simple shapes via CAD first. I then fine tuned using Blender. 
