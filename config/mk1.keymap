@@ -15,7 +15,7 @@
             mt: mod_tap {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                flavor = "hold-preferred";
+                flavor = "balanced";
                 tapping-term-ms = <200>;
                 bindings = <&kp>, <&skq>;
                 display-name = "Mod-Tap";
@@ -100,7 +100,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 quick-tap-ms = <0>;
-                flavor = "hold-preferred";
+                flavor = "balanced";
                 bindings = <&mo>, <&td_layer1>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
             };
     
@@ -118,7 +118,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 quick-tap-ms = <0>;
-                flavor = "hold-preferred";
+                flavor = "balanced";
                 bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
             };
         
@@ -127,7 +127,7 @@
                 label = "ALT_ENTER";
                 #binding-cells = <0>;
                 tapping-term-ms = <250>;
-                bindings = <&kp LALT>, <&kp ENTER>;    // First tap = sticky layer 1, double tap = switch to layer 1
+                bindings = <&kp LALT>, <&kp ENTER>;    // First tap = LALT, double tap = ENTER
             };
         };
         macros {
@@ -184,9 +184,9 @@
                 display-name = "Num";
                 bindings = <
                     &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
-                    &trans          &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp EQUAL
-                    &trans          &trans      &kp BSPC    &trans      &trans      &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans 
-                                                            &to 0       &trans      &altenter   &trans      &trans      &to 0  
+                    &trans          &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans      &trans      &trans      &kp LBKT    &kp RBKT    &kp MINUS   &kp EQUAL
+                    &trans          &trans      &kp BSPC    &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
+                                                            &to 0       &trans      &altenter   &trans      &trans      &to 0 
                 >;
             };
 
