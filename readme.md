@@ -25,7 +25,11 @@ Keycaps: "WOB" SA profile doubleshot ABS
 ![OLED Displays GIF](images/OLEDdisplay.gif) 
 ![OLED Displays](images/OLEDdisplay.jpg)
 
-### Write-up and Rants
+### 3D model
+![comparison 1](images/comparison.jpg) 
+![comparison 2](images/comparison(2).jpg)
+
+## Write-up and Rants
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This was my first ever custom keyboard. I learned blender in order to manipulate and modify the base 3D model where I learned that vertices, and topology management, is hard... I even had a back and forth on whether to use CAD or Blender first, to see which one is easier. I finally decided on modifying simple shapes via CAD first. I then fine tuned using Blender. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soldering the diodes was an easy task. Wires however, is a challenge on its own; some broke off after soldering, even breaking the pads they were soldered on after the fact. I fixed this by using a lot of flux and adjusting the heat. The microcontroller's attachment is also not the best; I had to remove, soldering off some parts inside, and the USB port in order to make it fit. 
