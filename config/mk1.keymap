@@ -173,9 +173,9 @@
             Game_layer {
                 display-name = "Game";
                 bindings = <   
-                    &kp 1       &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
-                    &kp 2       &kp LSHFT       &kp A       &kp S       &kp D       &kp F       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
-                    &kp 3       &kp CTRL        &kp Z       &kp X       &kp C       &kp V       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &to 0
+                    &kp N1      &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
+                    &kp N2      &kp LSHFT       &kp A       &kp S       &kp D       &kp F       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
+                    &kp N3      &kp CTRL        &kp Z       &kp X       &kp C       &kp V       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &to 0
                                                             &mo 2       &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC     &mo 4  
                 >;
             };
