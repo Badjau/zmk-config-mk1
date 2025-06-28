@@ -100,6 +100,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 quick-tap-ms = <0>;
+                ignore-modifiers;
                 flavor = "balanced";
                 bindings = <&mo>, <&td_layer1>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
             };
@@ -118,6 +119,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 quick-tap-ms = <0>;
+                ignore-modifiers;
                 flavor = "balanced";
                 bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
             };
