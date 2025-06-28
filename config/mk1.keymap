@@ -15,9 +15,11 @@
             mt: mod_tap {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                flavor = "balanced";
+                flavor = "hold-preferred";
                 tapping-term-ms = <200>;
                 bindings = <&kp>, <&skq>;
+                hold-while-undecided;
+                hold-while-undecided-linger;  // prevents shift release between hold and sticky
                 display-name = "Mod-Tap";
             };
 
@@ -28,15 +30,6 @@
                 release-after-ms = <500>;
                 quick-release;
                 ignore-modifiers;
-            };
-
-            custom_sticky: custom_sticky {
-                compatible = "zmk,behavior-sticky-key";
-                label = "STICKY_SHIFT";
-                #binding-cells = <1>;
-                bindings = <&kp>;
-                release-after-ms = <800>;
-                quick-release;                // Makes it release immediately after a keypress
             };
             
             spc_del: space_delete {
@@ -67,25 +60,6 @@
                 ignore-modifiers;
                 //no 'quick-release' makes it linger even after a keypress
             };
-    
-            ult_shift: ult_shift {
-                compatible = "zmk,behavior-hold-tap";
-                label = "ULT_SHIFT";
-                #binding-cells = <2>;
-                tapping-term-ms = <125>;
-                quick-tap-ms = <200>;
-                flavor = "balanced";
-                bindings = <&kp>, <&td_shift>; //binding set to LSHFT in keymap ex: "&ult_shift LSHFT 0"
-            };
-    
-            td_shift: tap_dance_shift {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_SHIFT";
-                #binding-cells = <0>;
-                tapping-term-ms = <250>;
-                bindings = <&custom_sticky LSHFT>, <&kp CAPS>;    // Now using our custom sticky shift
-            };
-
 
             td_layer1: tap_dance_layer {
                 compatible = "zmk,behavior-tap-dance";
