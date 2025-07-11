@@ -169,7 +169,7 @@
                 bindings = <
                     &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
                     &skl LSHFT      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &trans
-                    &skl LCTRL      &trans      &kp BSPC    &trans      &trans      &trans      &kp LBKT    &kp RBKT    &trans      &trans      &kp MINUS   &kp EQUAL
+                    &skl LCTRL      &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp BSPC      &kp LBKT    &kp RBKT    &trans      &trans      &kp MINUS   &kp EQUAL
                                                             &to 0       &trans      &altenter   &trans      &trans      &to 0 
                 >;
             };
