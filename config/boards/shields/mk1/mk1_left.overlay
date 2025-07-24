@@ -1,5 +1,26 @@
 #include "mk1.dtsi"
-          
+
+// Add pinctrl configuration for custom I2C pins
+&pinctrl {
+    // Configuration for i2c0 device, default state
+    i2c0_default: i2c0_default {
+        group1 {
+            // Pin 17 for SDA, Pin 18 for SCL
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 18)>;
+        };
+    };
+
+    // Configuration for i2c0 device, sleep state
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 18)>;
+            low-power-enable;
+        };
+    };
+};
+
 &kscan0 {
     row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -12,10 +33,16 @@
                 <&pro_micro 6 (GPIO_ACTIVE_HIGH)>,
                 <&pro_micro 0 (GPIO_ACTIVE_HIGH)>,
                 <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-};    
+};
 
+// Override the pro_micro_i2c to use our custom pins
 &pro_micro_i2c {
+    compatible = "nordic,nrf-twim";
     status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>; // 400kHz
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
