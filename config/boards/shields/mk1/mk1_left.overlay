@@ -1,17 +1,43 @@
 #include "mk1.dtsi"
 
-&kscan0 {
-    row-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>,
-                <&gpio0 10 GPIO_ACTIVE_HIGH>,
-                <&gpio0 9  GPIO_ACTIVE_HIGH>,
-                <&gpio0 8  GPIO_ACTIVE_HIGH>;
+super_mini: connector {
+    compatible = "zmk,connector";
+    #gpio-cells = <2>;
+    gpio-map = <
+        0   &gpio0 6        // D0  (TX)
+        1   &gpio0 8        // D1  (RX)
+        2   &gpio0 17       // D2  (SCK)
+        3   &gpio0 20       // D3  (MISO)
+        4   &gpio0 22       // D4  (MOSI)
+        5   &gpio0 24       // D5  (CS)
+        6   &gpio1 0        // D6  (SDA)
+        7   &gpio0 11       // D7  (SCL)
+        8   &gpio1 4        // D8
+        9   &gpio1 6        // D9
+        10  &gpio0 9        // D10 (NFC1)
+        11  &gpio0 10       // D11 (NFC2)
+        12  &gpio1 11       // D12
+        13  &gpio1 13       // D13 (SDA1)
+        14  &gpio1 15       // D14 (SCL1)
+        15  &gpio0 2        // D15 (A0)
+        16  &gpio0 29       // D16 (A1)
+        17  &gpio0 31       // D17 (A2)
+        18  &gpio0 13       // EXT_VCC (3.3V logic pin)
+    >;
+};
 
-    col-gpios = <&gpio0 5  GPIO_ACTIVE_HIGH>,
-                <&gpio0 15 GPIO_ACTIVE_HIGH>,
-                <&gpio0 4  GPIO_ACTIVE_HIGH>,
-                <&gpio0 16 GPIO_ACTIVE_HIGH>,
-                <&gpio0 3  GPIO_ACTIVE_HIGH>,
-                <&gpio0 17 GPIO_ACTIVE_HIGH>;
+&kscan0 {
+    row-gpios = <&super_mini 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+    col-gpios = <&super_mini 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP),
+                <&super_mini 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                <&super_mini 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };
 
 &pro_micro_i2c {
