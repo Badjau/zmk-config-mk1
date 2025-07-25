@@ -19,17 +19,17 @@
 };
 
 &kscan0 {
-    row-gpios = <&pro_micro 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-                <&pro_micro 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-                <&pro_micro 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-                <&pro_micro 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    row-gpios = <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    col-gpios = <&pro_micro 9 (GPIO_ACTIVE_LOW)>,
-                <&pro_micro 9 (GPIO_ACTIVE_LOW)>,
-                <&pro_micro 9 (GPIO_ACTIVE_LOW)>,
-                <&pro_micro 9 (GPIO_ACTIVE_LOW)>,
-                <&pro_micro 9 (GPIO_ACTIVE_LOW)>,
-                <&pro_micro 9 (GPIO_ACTIVE_LOW)>;
+    col-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>;
 };    
 
 &i2c0 {
