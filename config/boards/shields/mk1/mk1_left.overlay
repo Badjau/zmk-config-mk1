@@ -5,17 +5,17 @@
     // Configuration for i2c0 device, default state
     i2c0_default: i2c0_default {
         group1 {
-            // Pin 17 for SDA, Pin 18 for SCL
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 18)>;
+            // Pin 10 for SDA, Pin 11 for SCL
+            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 11)>;
         };
     };
 
     // Configuration for i2c0 device, sleep state
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 18)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 11)>;
             low-power-enable;
         };
     };
