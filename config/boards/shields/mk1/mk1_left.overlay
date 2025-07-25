@@ -1,48 +1,44 @@
 #include "mk1.dtsi"
 
-// Add pinctrl configuration for custom I2C pins
 &pinctrl {
-    // Configuration for i2c0 device, default state
-    i2c0_default: i2c0_default {
+    // Custom I2C configuration for SuperMini nRF52840
+    i2c0_custom_default: i2c0_custom_default {
         group1 {
-            // Pin 10 for SDA, Pin 11 for SCL
-            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 11)>;
+            psels = <NRF_PSEL(TWIM_SDA, 1, 0)>,   // D6 - P1.00 (SDA)
+                    <NRF_PSEL(TWIM_SCL, 0, 11)>;  // D7 - P0.11 (SCL)
         };
     };
 
-    // Configuration for i2c0 device, sleep state
-    i2c0_sleep: i2c0_sleep {
+    i2c0_custom_sleep: i2c0_custom_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 11)>;
+            psels = <NRF_PSEL(TWIM_SDA, 1, 0)>,   // D6 - P1.00 (SDA)
+                    <NRF_PSEL(TWIM_SCL, 0, 11)>;  // D7 - P0.11 (SCL)
             low-power-enable;
         };
     };
 };
 
 &kscan0 {
-    row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+    row-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+                <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
     col-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 8 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 7 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 6 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 0 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-};
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH)>;
+};    
 
-// Override the pro_micro_i2c to use our custom pins
-&pro_micro_i2c {
+&i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-0 = <&i2c0_custom_default>;
+    pinctrl-1 = <&i2c0_custom_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>; // 400kHz
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
