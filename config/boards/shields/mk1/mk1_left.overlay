@@ -1,18 +1,18 @@
 #include "mk1.dtsi"
-          
-&kscan0 {
-    row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    col-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 8 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 7 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 6 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 0 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-};    
+&kscan0 {
+    row-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>,
+                <&gpio0 10 GPIO_ACTIVE_HIGH>,
+                <&gpio0 9  GPIO_ACTIVE_HIGH>,
+                <&gpio0 8  GPIO_ACTIVE_HIGH>;
+
+    col-gpios = <&gpio0 5  GPIO_ACTIVE_HIGH>,
+                <&gpio0 15 GPIO_ACTIVE_HIGH>,
+                <&gpio0 4  GPIO_ACTIVE_HIGH>,
+                <&gpio0 16 GPIO_ACTIVE_HIGH>,
+                <&gpio0 3  GPIO_ACTIVE_HIGH>,
+                <&gpio0 17 GPIO_ACTIVE_HIGH>;
+};
 
 &pro_micro_i2c {
     status = "okay";
