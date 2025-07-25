@@ -1,44 +1,21 @@
 #include "mk1.dtsi"
-
-&pinctrl {
-    // Custom I2C configuration for SuperMini nRF52840
-    i2c0_custom_default: i2c0_custom_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 0)>,   // D6 - P1.00 (SDA)
-                    <NRF_PSEL(TWIM_SCL, 0, 11)>;  // D7 - P0.11 (SCL)
-        };
-    };
-
-    i2c0_custom_sleep: i2c0_custom_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 0)>,   // D6 - P1.00 (SDA)
-                    <NRF_PSEL(TWIM_SCL, 0, 11)>;  // D7 - P0.11 (SCL)
-            low-power-enable;
-        };
-    };
-};
-
+          
 &kscan0 {
     row-gpios = <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+                <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
     col-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>,
-                <&pro_micro 5 (GPIO_ACTIVE_HIGH)>;
+                <&pro_micro 15 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 4 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 16 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 3 (GPIO_ACTIVE_HIGH)>,
+                <&pro_micro 17 (GPIO_ACTIVE_HIGH)>;
 };    
 
-&i2c0 {
-    compatible = "nordic,nrf-twim";
+&pro_micro_i2c {
     status = "okay";
-    pinctrl-0 = <&i2c0_custom_default>;
-    pinctrl-1 = <&i2c0_custom_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
