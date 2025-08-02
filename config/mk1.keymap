@@ -1,6 +1,6 @@
-    #include <behaviors.dtsi>
-    #include <dt-bindings/zmk/keys.h>
-    #include <dt-bindings/zmk/bt.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 //https://zmk.dev/docs/keymaps/behaviors/sticky-key
     / {
         behaviors {
@@ -15,19 +15,18 @@
             mt: mod_tap {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                tapping-term-ms = <200>;
+                tapping-term-ms = <140>;
                 bindings = <&kp>, <&skq>;
                 flavor = "hold-preferred";
                 hold-while-undecided;
                 hold-while-undecided-linger;  // prevents shift release between hold and sticky
-                display-name = "Mod-Tap";
             };
 
             skq: sticky_key_quick_release {
                 compatible = "zmk,behavior-sticky-key";
                 #binding-cells = <1>;
                 bindings = <&kp>;
-                release-after-ms = <500>;
+                release-after-ms = <250>;
                 quick-release;
                 ignore-modifiers;
             };
@@ -36,7 +35,7 @@
                 compatible = "zmk,behavior-sticky-key";
                 #binding-cells = <1>;
                 bindings = <&kp>;
-                release-after-ms = <500>;
+                release-after-ms = <250>;
                 ignore-modifiers;
                 lazy;
             };
@@ -53,7 +52,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "WIN_Z _HOLD_TAP";
                 #binding-cells = <2>;
-                tapping-term-ms = <200>; //hold timer to send hold key
+                tapping-term-ms = <140>; //hold timer to send hold key
                 quick-tap-ms = <500>; //when tapped within timer, disable hold and send tap; for repeated presses
                 require-prior-idle-ms = <125>; //When key press before timer, disable hold
                 flavor = "tap-preferred";
@@ -74,7 +73,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_LAYER";
                 #binding-cells = <0>;
-                tapping-term-ms = <250>;
+                tapping-term-ms = <140>;
                 bindings = <&sl 2>, <&to 2>;    // First tap = sticky layer 2, double tap = switch to layer 2
             };
 
@@ -82,7 +81,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "STICKY_MOMENTARY_LAYER";
                 #binding-cells = <2>;
-                tapping-term-ms = <250>;
+                tapping-term-ms = <140>;
                 quick-tap-ms = <0>;
                 flavor = "balanced";
                 bindings = <&mo>, <&td_layer1>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
@@ -92,7 +91,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_LAYER2";
                 #binding-cells = <0>;
-                tapping-term-ms = <250>;
+                tapping-term-ms = <140>;
                 bindings = <&not_so_sticky 3>, <&to 3>;    // First tap = sticky layer 1, double tap = switch to layer 1
             };
 
@@ -100,7 +99,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "STICKY_MOMENTARY_LAYER2";
                 #binding-cells = <2>;
-                tapping-term-ms = <250>;
+                tapping-term-ms = <140>;
                 quick-tap-ms = <0>;
                 flavor = "balanced";
                 bindings = <&mo>, <&td_layer2>;  // Hold for momentary, tap for tap-dance behavior ex:&slmo 1 2
@@ -110,7 +109,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 label = "ALT_ENTER";
                 #binding-cells = <0>;
-                tapping-term-ms = <250>;
+                tapping-term-ms = <140>;
                 bindings = <&kp LALT>, <&kp ENTER>;    // First tap = LALT, double tap = ENTER
             };
         };
@@ -150,7 +149,7 @@
                     &kp TAB             &kp Q           &kp W       &alt_f4     &kp R       &kp T       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                     &mt LSHFT LSHFT     &kp A           &kp S       &kp D       &kp F       &kp G       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                     &mt LCTRL LCTRL     &win_z LGUI Z   &kp X       &kp C       &kp V       &kp B       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &mo 5 
-                                                                    &slmo1 2 2  &spc_del    &altenter   &kp ENTER  &kp BSPC     &slmo2 4 4  
+                                                                    &altenter   &slmo1 2 2  &spc_del    &kp BSPC   &slmo2 4 4   &kp ENTER            
                 >;
             };
             // Layer 1 (Activated on Tap)
@@ -160,7 +159,7 @@
                     &kp N1      &kp TAB         &kp Q       &kp W       &kp E       &kp R       &kp Y      &kp U        &kp I       &kp O       &kp P       &kp BSLH  
                     &kp N2      &kp LSHFT       &kp A       &kp S       &kp D       &kp F       &kp H      &kp J        &kp K       &kp L       &kp SEMI    &kp APOS   
                     &kp N3      &kp LCTRL       &kp Z       &kp X       &kp C       &kp V       &kp N      &kp M        &kp COMMA   &kp DOT     &kp SLASH   &to 0
-                                                            &mo 2       &kp SPACE   &kp LALT    &kp ENTER  &kp BSPC     &mo 4  
+                                                            &kp LALT    &mo 2       &kp SPACE   &kp BSPC   &mo 4        &kp ENTER       
                 >;
             };
             // Layer 2 (Activated on hold)
@@ -170,7 +169,7 @@
                     &kp GRAVE       &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE 
                     &skl LSHFT      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp MINUS
                     &skl LCTRL      &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp BSPC    &kp LBKT    &kp RBKT    &trans      &trans      &trans      &kp EQUAL
-                                                            &to 0       &trans      &altenter   &trans      &trans      &to 0 
+                                                            &altenter   &to 0       &trans      &trans      &to 0       &trans       
                 >;
             };
 
@@ -181,7 +180,7 @@
                     &kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12
                     &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
                     &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans 
-                                                            &to 0       &trans      &trans      &kp K_APP   &trans      &to 0  
+                                                            &trans      &to 0       &trans      &kp K_APP   &to 0       &trans       
                 >;
             };
 
